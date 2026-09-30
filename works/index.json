@@ -1,1 +1,15 @@
-{"works": []}
+{
+  "works": [
+    {
+      "slug": "2026-10-01_personal-mimosa",
+      "date": "2026-10-01",
+      "industry": "ジム",
+      "name": "女性専用パーソナルジム ミモザ(架空)",
+      "area": "〇〇市〇〇町",
+      "problem": "料金が見えず、問い合わせ前に不安で離脱されていた",
+      "solution": "料金を先に見せ、体験予約ボタンを画面下に固定した",
+      "status": "pending",
+      "thread_subject": "[noren-works] 承認待ち: 2026-10-01_personal-mimosa"
+    }
+  ]
+}
