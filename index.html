@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作実績 | ノレン</title>
+<meta name="description" content="ノレン(代表 石井 愛斗)の Web 制作実績。地元のジム・飲食店・美容室向けの1ページサイト制作例。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ai:#2B3A67; --kinari:#F6F1E7; --kincha:#B08A3E;
+    --bg:var(--kinari); --fg:#1f2433; --muted:#6b6f7a; --card:#fff; --line:#e6dfd2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#151a28; --fg:#f2eee6; --muted:#a9adb8; --card:#1f2538; --line:#2e3550; }
+  }
+  :root[data-theme="dark"]{ --bg:#151a28; --fg:#f2eee6; --muted:#a9adb8; --card:#1f2538; --line:#2e3550; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.7}
+  header{background:var(--ai);color:#fff;padding:40px 16px 32px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
+  h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:28px;margin:0 0 6px;letter-spacing:.04em}
+  header p{margin:0;opacity:.85;font-size:14px}
+  header .tag{display:inline-block;margin-top:14px;padding:4px 12px;border:1px solid var(--kincha);color:var(--kincha);border-radius:999px;font-size:12px;letter-spacing:.1em}
+  main{padding:28px 0 60px}
+  .note{font-size:13px;color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .thumb{position:relative;aspect-ratio:16/10;background:#e9e4da;overflow:hidden}
+  .thumb iframe{position:absolute;inset:0;width:200%;height:200%;transform:scale(.5);transform-origin:0 0;border:0;pointer-events:none}
+  .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .meta{font-size:12px;color:var(--muted)}
+  .meta b{color:var(--kincha);font-weight:700}
+  h2{font-family:"Shippori Mincho",serif;font-size:18px;margin:0}
+  .ps{font-size:13px;margin:4px 0 0}
+  .ps span{display:block}
+  .ps .p::before{content:"課題 ";color:var(--muted);font-size:11px}
+  .ps .s::before{content:"解決 ";color:var(--kincha);font-size:11px}
+  .btn{margin-top:auto;padding-top:10px}
+  .btn a{display:inline-block;background:var(--ai);color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-size:14px}
+  .pending{border:1px dashed var(--kincha)}
+  .pending .meta::after{content:" 承認待ち";color:#c0392b}
+  .empty{color:var(--muted);text-align:center;padding:60px 0}
+  footer{border-top:1px solid var(--line);padding:24px 16px;font-size:12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>制作実績</h1>
+    <p>ノレン ― 暖簾の向こうに、人を。</p>
+    <span class="tag">WORKS</span>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <p class="note">地元のお店向けの1ページサイト制作例です。掲載しているお店はすべて架空です。「あなたのお店版」もお作りできます。</p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>まだ作品がありません。</p>
+  </div>
+</main>
+<footer>© ノレン(代表 石井 愛斗) ・ お問い合わせ: noren.mar.llc@gmail.com</footer>
+<script>
+(async()=>{
+  const showAll = new URLSearchParams(location.search).has('all');
+  const grid=document.getElementById('grid'), empty=document.getElementById('empty');
+  let works=[];
+  try{ const r=await fetch('works/index.json?'+Date.now()); works=(await r.json()).works||[]; }catch(e){}
+  works=works.filter(w=>w.status==='approved'||(showAll&&w.status==='pending'))
+             .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  if(!works.length){empty.hidden=false;return;}
+  for(const w of works){
+    const url='works/'+encodeURIComponent(w.slug)+'/';
+    const el=document.createElement('article');
+    el.className='card'+(w.status==='pending'?' pending':'');
+    el.innerHTML=`
+      <div class="thumb"><iframe loading="lazy" src="${url}" title="${w.name}" tabindex="-1"></iframe></div>
+      <div class="body">
+        <div class="meta"><b>${w.industry||''}</b> ・ ${w.area||''} ・ ${w.date||''}</div>
+        <h2>${w.name||w.slug}</h2>
+        <p class="ps"><span class="p">${w.problem||''}</span><span class="s">${w.solution||''}</span></p>
+        <div class="btn"><a href="${url}" target="_blank" rel="noopener">サイトを見る</a></div>
+      </div>`;
+    grid.appendChild(el);
+  }
+})();
+</script>
+</body>
+</html>
