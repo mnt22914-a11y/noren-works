@@ -10,6 +10,17 @@
       "solution": "料金を先に見せ、体験予約ボタンを画面下に固定した",
       "status": "rejected",
       "thread_subject": "[noren-works] 承認待ち: 2026-10-01_personal-mimosa"
+    },
+    {
+      "slug": "2026-10-05_gym-nightbase",
+      "date": "2026-10-05",
+      "industry": "ジム",
+      "name": "24hジム ナイトベース(架空)",
+      "area": "〇〇市〇〇町",
+      "problem": "24時間営業なのに営業時間・料金・防犯が分かりにくく、見学予約が伸びなかった",
+      "solution": "「24h」と月額を最上部に出し、体験予約ボタンを画面下に固定した",
+      "status": "pending",
+      "thread_subject": "[noren-works] 承認待ち: 2026-10-05_gym-nightbase"
     }
   ]
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>24hジム ナイトベース(架空)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1226;--bg2:#121B38;--ink:#EAF0FF;--mute:#9AA7C7;--lime:#C6FF3D;--line:#243055}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding-bottom:84px;overflow-x:hidden}
+section{padding:44px 20px;max-width:640px;margin:0 auto}
+h2{font-size:22px;font-weight:900;margin-bottom:20px}
+h2 span{color:var(--lime);font-size:12px;letter-spacing:.2em;display:block}
+.hero{text-align:center;padding:56px 20px 44px;background:radial-gradient(circle at 80% 0,#2a3d8f55,transparent 55%),radial-gradient(circle at 10% 100%,#C6FF3D22,transparent 50%)}
+.hero .tag{display:inline-block;border:1px solid var(--lime);color:var(--lime);border-radius:99px;padding:2px 14px;font-size:12px}
+.hero h1{font-size:30px;font-weight:900;margin:14px 0 8px;line-height:1.3}
+.big{font-size:72px;font-weight:900;color:var(--lime);line-height:1;text-shadow:0 0 24px #C6FF3D88}
+.hero p{color:var(--mute);margin:10px 0 22px}
+.btn{display:inline-block;background:var(--lime);color:#0B1226;font-weight:900;text-decoration:none;border-radius:99px;padding:14px 28px}
+.cards{display:grid;gap:12px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:14px}
+.card i{font-style:normal;font-size:30px}
+.card h3{font-size:16px}.card p{color:var(--mute);font-size:14px}
+.menu{list-style:none;background:var(--bg2);border-radius:14px;border:1px solid var(--line)}
+.menu li{display:flex;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.menu li:last-child{border:0}.menu small{display:block;color:var(--mute)}
+.menu b{color:var(--lime);white-space:nowrap}
+.vis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vis div{border-radius:14px;height:120px;display:flex;align-items:flex-end;padding:10px;font-size:13px;font-weight:700}
+.v1{grid-column:span 2;height:150px!important;background:linear-gradient(135deg,#1c2b6b,#0B1226 60%,#C6FF3D55)}
+.v2{background:repeating-linear-gradient(90deg,#1a2650 0 12px,#121B38 12px 24px)}
+.v3{background:radial-gradient(circle at 50% 40%,#C6FF3D66,#121B38 65%)}
+.voice{background:var(--bg2);border-left:3px solid var(--lime);border-radius:8px;padding:14px 16px;margin-bottom:12px;font-size:14px}
+.voice small{display:block;color:var(--mute);margin-top:6px}
+.note{color:var(--mute);font-size:12px}
+dl{background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--line)}
+dt{color:var(--lime);font-size:12px;margin-top:8px}dt:first-child{margin:0}
+.contact{text-align:center}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:28px 20px}
+.fix{position:fixed;left:0;right:0;bottom:0;z-index:9;background:#0B1226ee;border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center}
+.fix span{font-size:12px;color:var(--mute)}
+.fix .btn{padding:12px 22px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="tag">24時間365日 営業</span>
+  <h1>24hジム<br>ナイトベース</h1>
+  <div class="big">24h</div>
+  <p>仕事終わりも、夜勤明けも。<br>あなたの時間に、ジムを合わせる。</p>
+  <a class="btn" href="#">無料体験を予約する</a>
+</header>
+
+<section>
+  <h2><span>STRENGTH</span>選ばれる3つの理由</h2>
+  <div class="cards">
+    <div class="card"><i>🌙</i><div><h3>いつでも使える</h3><p>24時間365日OK。深夜も早朝も、好きな時間に。</p></div></div>
+    <div class="card"><i>🛡️</i><div><h3>夜も安心の防犯</h3><p>防犯カメラとスタッフ巡回で、遅い時間も安心。</p></div></div>
+    <div class="card"><i>💴</i><div><h3>入会金0円・明朗料金</h3><p>月額6,980円〜。追加費用はありません。</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2><span>PRICE</span>メニュー・料金</h2>
+  <ul class="menu">
+    <li><div>デイタイム会員<small>9:00〜17:00</small></div><b>月6,980円</b></li>
+    <li><div>24hレギュラー会員<small>いつでも利用OK</small></div><b>月8,980円</b></li>
+    <li><div>24hプレミアム<small>シャワー・タオル込み</small></div><b>月10,980円</b></li>
+    <li><div>1日ビジター<small>初回は無料体験</small></div><b>1,500円</b></li>
+  </ul>
+  <p class="note" style="margin-top:8px">※価格は架空です。表示は税込。入会金0円。</p>
+</section>
+
+<section>
+  <h2><span>ATMOSPHERE</span>お店の雰囲気</h2>
+  <div class="vis">
+    <div class="v1">🏋️ マシンエリア(夜景が映える窓側)</div>
+    <div class="v2">🏃 有酸素ゾーン</div>
+    <div class="v3">🚿 清潔なシャワー室</div>
+  </div>
+</section>
+
+<section>
+  <h2><span>VOICE</span>お客様の声</h2>
+  <div class="voice">残業のあとでも通えるのが最高です。夜でも人目があって安心できます。<small>30代・会社員 さん</small></div>
+  <div class="voice">夜勤明けの朝にさっと汗を流せて、生活リズムが整いました。<small>20代・看護師 さん</small></div>
+  <p class="note">※架空の声です</p>
+</section>
+
+<section>
+  <h2><span>ACCESS</span>アクセス</h2>
+  <dl>
+    <dt>住所</dt><dd>〇〇市〇〇町1-2-3 ナイトビル1F</dd>
+    <dt>営業時間</dt><dd>24時間365日(スタッフ常駐 9:00〜21:00)</dd>
+    <dt>電話</dt><dd>000-0000-0000</dd>
+    <dt>最寄り</dt><dd>〇〇駅 徒歩3分</dd>
+  </dl>
+</section>
+
+<section class="contact">
+  <h2><span>RESERVE</span>予約・お問い合わせ</h2>
+  <p style="margin-bottom:16px;color:var(--mute)">初回体験は無料。手ぶらでOKです。</p>
+  <a class="btn" href="#">無料体験を予約する</a>
+</section>
+
+<footer>※このサイトは架空のお店の制作例です。制作: ノレン</footer>
+
+<div class="fix"><span>初回無料・手ぶらOK</span><a class="btn" href="#">体験予約</a></div>
+</body>
+</html>
