@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>炭火と燗 ひいらぎ(架空)</title>
+<meta name="description" content="〇〇駅 東口 徒歩3分、裏通りの炭火串焼きと燗酒の店。今夜の席の空きと今夜の黒板をサイトで。カウンター8席・小上がり2卓。※架空のお店の制作例です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yuji+Syuku&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sumi:#161210; --sumi2:#211A15; --paper:#F3EBDC; --paper2:#E7DAC3; --ink:#2A221C; --ink2:#5C5047;
+  --aka:#C73A2C; --hi:#E98A2E; --mute:#A1968A; --line:rgba(243,235,220,.14); --line-d:rgba(42,34,28,.14);
+  --mincho:"Shippori Mincho",serif; --sans:"Zen Kaku Gothic New",sans-serif; --fude:"Yuji Syuku",serif; --num:"Barlow Condensed",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html.motion{scroll-behavior:auto}
+body{font-family:var(--sans);background:var(--sumi);color:var(--paper);line-height:1.85;font-size:15px;overflow-x:clip;padding-bottom:84px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.eyebrow{font-family:var(--num);font-weight:500;letter-spacing:.26em;font-size:12px;text-transform:uppercase;color:var(--hi)}
+.h2{font-family:var(--mincho);font-weight:700;font-size:clamp(26px,4.2vw,42px);line-height:1.5;letter-spacing:.04em;margin-top:10px}
+.lead{margin-top:18px;max-width:32em;color:var(--mute)}
+.light .lead{color:var(--ink2)}
+.nw{display:inline-block}
+.num{font-family:var(--num);font-weight:700;letter-spacing:.02em}
+section{position:relative}
+.light{background:var(--paper);color:var(--ink)}
+.light .eyebrow{color:var(--aka)}
+
+/* 短冊(このサイトの形) */
+.strip{position:relative;background:var(--paper);padding:14px 10px 20px;border-radius:2px;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);transform-origin:50% -40px;flex:0 0 auto}
+.strip::before{content:"";position:absolute;top:5px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--sumi);transform:translateX(-50%)}
+.strip::after{content:"";position:absolute;left:50%;top:-40px;width:1px;height:40px;background:var(--paper2);transform:translateX(-50%)}
+.strip .ph{aspect-ratio:3/5;overflow:hidden;background:#000}
+.strip .ph img{width:100%;height:100%;object-fit:cover}
+.strip figcaption{font-family:var(--fude);color:var(--ink);font-size:14px;margin-top:10px;text-align:center;letter-spacing:.08em}
+.light .strip{box-shadow:0 18px 40px -20px rgba(42,34,28,.45)}
+.light .strip::before{background:var(--ink)}
+.light .strip::after{background:var(--ink2);opacity:.5}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--aka);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:15px 26px;font-size:15px;transition:transform .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn.ghost{background:transparent;color:inherit;outline:1px solid currentColor;opacity:.9}
+
+/* オープニング */
+.intro{position:fixed;inset:0;z-index:50;background:#0C0907;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+.lantern{width:92px;height:118px;border-radius:46px/58px;background:#4a1a14;position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--fude);font-size:44px;color:rgba(243,235,220,.35);box-shadow:0 0 0 rgba(231,70,44,0);transition:none}
+.lantern::before,.lantern::after{content:"";position:absolute;left:18px;right:18px;height:8px;background:#1a110e;border-radius:3px}
+.lantern::before{top:-6px}.lantern::after{bottom:-6px}
+.lantern i{position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(180deg,transparent 0 11px,rgba(0,0,0,.14) 11px 12px)}
+.intro small{font-family:var(--num);letter-spacing:.3em;color:var(--mute);font-size:12px}
+@media (prefers-reduced-motion:reduce){.intro{display:none}}
+
+/* ヘッダー */
+header{position:absolute;inset:0 0 auto;z-index:5}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:var(--mincho);font-weight:700;font-size:22px;letter-spacing:.2em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:10px;height:14px;border-radius:5px/7px;background:var(--aka);box-shadow:0 0 12px rgba(199,58,44,.8)}
+.hours{font-family:var(--num);font-size:13px;letter-spacing:.18em;color:var(--paper);opacity:.85}
+
+/* ヒーロー */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,18,16,.45) 0%,rgba(22,18,16,.1) 35%,rgba(22,18,16,.88) 75%,var(--sumi) 100%)}
+.hero .wrap{padding:120px 0 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
+.hero h1{font-family:var(--mincho);font-weight:700;font-size:clamp(38px,7.6vw,86px);line-height:1.25;letter-spacing:.04em}
+.hero p{margin-top:18px;color:#D9CFC0;max-width:30em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .price{font-size:13px;color:var(--mute)}
+.hero .price b{font-family:var(--num);font-size:18px;color:var(--paper)}
+/* 今夜の席(ヒーローの小さな板) */
+.board{background:rgba(22,18,16,.72);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+.board .t{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--num);letter-spacing:.14em;font-size:12px;color:var(--mute)}
+.board .t b{font-size:20px;color:var(--paper);letter-spacing:.06em}
+.board .row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line);gap:10px}
+.board .row:first-of-type{margin-top:12px}
+.board .row span{font-size:14px}
+.board .row small{color:var(--mute);margin-left:6px;font-size:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;white-space:nowrap}
+.pill i{width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;font-family:var(--num);font-size:13px;color:var(--sumi);background:var(--st,#7CC67A)}
+.pill[data-s="0"]{--st:#8FD68A}.pill[data-s="1"]{--st:#F2C14E}.pill[data-s="2"]{--st:#E4604F}
+.board .note{margin-top:10px;font-size:11px;color:var(--mute)}
+.board .note a{color:var(--hi);text-decoration:none;border-bottom:1px solid currentColor}
+
+/* 今夜の席(本編) */
+.tonight .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:96px 0;align-items:center}
+.bigboard{background:var(--sumi);color:var(--paper);border-radius:8px;padding:28px 26px 22px;position:relative;overflow:hidden}
+.bigboard::before{content:"今夜";position:absolute;right:-6px;top:-28px;font-family:var(--fude);font-size:140px;color:rgba(243,235,220,.05);line-height:1}
+.bigboard .t{display:flex;justify-content:space-between;align-items:baseline}
+.bigboard .t .num{font-size:48px;line-height:1}
+.bigboard .t span{font-family:var(--num);letter-spacing:.16em;font-size:12px;color:var(--mute)}
+.seat{display:grid;grid-template-columns:1fr auto;gap:8px 14px;padding:16px 0;border-top:1px solid var(--line);margin-top:14px;align-items:center}
+.seat h3{font-family:var(--mincho);font-weight:700;font-size:18px;letter-spacing:.06em}
+.seat small{display:block;color:var(--mute);font-size:12px;margin-top:2px}
+.seat .pill{font-size:15px}
+.seat .dots{grid-column:1/-1;display:flex;gap:5px}
+.seat .dots i{width:14px;height:22px;border-radius:3px;background:rgba(243,235,220,.12)}
+.seat .dots i.on{background:var(--hi)}
+.hourly{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.hourly .lab{font-size:12px;color:var(--mute);margin-bottom:8px}
+.hourly .cells{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.hourly .cells div{background:rgba(243,235,220,.06);border-radius:4px;padding:8px 6px;text-align:center;font-size:12px}
+.hourly .cells div b{display:block;font-family:var(--num);font-size:18px;color:var(--hi);letter-spacing:.04em}
+.bigboard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:11px;color:var(--mute);gap:10px;flex-wrap:wrap}
+.bigboard .foot button{font:inherit;color:var(--hi);background:none;border:1px solid rgba(233,138,46,.5);border-radius:999px;padding:6px 12px;cursor:pointer}
+.tonight .why{margin-top:28px;display:grid;gap:14px}
+.tonight .why>div{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.tonight .why b{font-family:var(--num);font-size:28px;line-height:1;color:var(--aka);font-weight:700}
+.tonight .why h3{font-family:var(--mincho);font-size:16px;letter-spacing:.04em}
+.tonight .why p{font-size:14px;color:var(--ink2);margin-top:2px}
+
+/* 流れる帯 */
+.marquee{overflow:hidden;background:var(--aka);color:var(--paper);padding:12px 0;font-family:var(--num);font-weight:700;letter-spacing:.22em;font-size:15px}
+.marquee .track{display:flex;width:max-content;animation:mq 26s linear infinite}
+.marquee span{display:flex;align-items:center;white-space:nowrap}
+.marquee i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--paper);margin:0 26px;opacity:.7}
+.marquee em{font-family:var(--mincho);font-style:normal;letter-spacing:.14em;font-weight:700}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+/* 今夜の黒板 */
+.kokuban .wrap{padding:96px 0 110px}
+.kokuban .head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+.date{font-family:var(--fude);font-size:22px;color:var(--paper);letter-spacing:.1em}
+.date small{display:block;font-family:var(--num);font-size:12px;letter-spacing:.24em;color:var(--mute);margin-bottom:2px}
+.rail{display:flex;gap:18px;margin-top:70px;overflow-x:auto;padding:0 6px 30px;scroll-snap-type:x proximity;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.tz{width:104px;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;scroll-snap-align:start;padding:40px 10px 16px}
+.tz .v{writing-mode:vertical-rl;font-family:var(--fude);font-size:24px;letter-spacing:.14em;color:var(--ink);line-height:1.15}
+.tz .v small{font-size:14px;color:var(--ink2);margin-top:10px}
+.tz .p{font-family:var(--num);font-size:20px;font-weight:700;color:var(--aka);margin-top:14px}
+.tz .p::after{content:"円";font-family:var(--sans);font-size:11px;margin-left:2px;color:var(--ink2)}
+.tz.new::before{background:var(--aka)}
+.tz .tag{position:absolute;top:17px;left:50%;transform:translateX(-50%);background:var(--aka);color:#fff;font-size:10px;line-height:1.5;padding:1px 8px;letter-spacing:.14em;border-radius:2px;white-space:nowrap}
+.kokuban .after{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:center}
+.kokuban .after p{color:var(--mute);font-size:14px}
+.kokuban .after .pics{display:flex;gap:22px;justify-content:center}
+.kokuban .after .strip{width:150px}
+.kokuban .after .strip:nth-child(2){margin-top:48px}
+
+/* 炭火 */
+.sumibi .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;padding:100px 0;align-items:center}
+.sumibi .photo{position:relative;display:flex;justify-content:center}
+.sumibi .photo .strip{width:min(300px,100%)}
+.smoke{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.smoke i{position:absolute;bottom:20%;left:50%;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(243,235,220,.35),rgba(243,235,220,0) 70%);filter:blur(10px);opacity:0;animation:rise 7s ease-out infinite}
+.smoke i:nth-child(2){left:40%;animation-delay:2.3s;width:80px;height:80px}
+.smoke i:nth-child(3){left:58%;animation-delay:4.6s}
+@keyframes rise{0%{transform:translate(-50%,0) scale(.6);opacity:0}15%{opacity:.8}100%{transform:translate(-30%,-320px) scale(2.2);opacity:0}}
+@media (prefers-reduced-motion:reduce){.smoke{display:none}}
+.facts{margin-top:28px;display:grid;gap:18px}
+.fact{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;border-top:1px solid var(--line-d);padding-top:16px}
+.fact .num{font-size:40px;line-height:1;color:var(--aka)}
+.fact .num small{font-family:var(--sans);font-size:12px;margin-left:4px;color:var(--ink2);font-weight:500}
+.fact h3{font-family:var(--mincho);font-size:16px;letter-spacing:.04em}
+.fact p{font-size:14px;color:var(--ink2);margin-top:2px}
+
+/* 燗 */
+.kan{isolation:isolate;overflow:hidden}
+.kan>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.5}
+.kan::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--sumi) 0%,rgba(22,18,16,.55) 40%,rgba(22,18,16,.85) 100%)}
+.kan .wrap{padding:110px 0}
+.temps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;max-width:720px}
+.temp{background:rgba(22,18,16,.6);border:1px solid var(--line);border-radius:6px;padding:20px 16px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;font:inherit;color:inherit}
+.temp .num{font-size:44px;line-height:1;display:block}
+.temp .num small{font-size:16px;font-family:var(--num);font-weight:500;color:var(--mute)}
+.temp h3{font-family:var(--mincho);font-size:16px;margin-top:8px;letter-spacing:.08em}
+.temp.on{border-color:var(--hi);background:rgba(233,138,46,.12)}
+.temp.on .num{color:var(--hi)}
+.kan .pick{margin-top:22px;max-width:720px;background:rgba(243,235,220,.06);border-left:3px solid var(--hi);padding:16px 20px;min-height:96px}
+.kan .pick b{font-family:var(--mincho);font-size:17px;letter-spacing:.06em;display:block}
+.kan .pick p{font-size:14px;color:#D9CFC0;margin-top:4px}
+.kan .cnt{margin-top:36px;display:flex;gap:40px;flex-wrap:wrap}
+.kan .cnt div{font-size:13px;color:var(--mute)}
+.kan .cnt b{display:block;font-family:var(--num);font-size:48px;line-height:1;color:var(--paper);font-weight:700}
+
+/* お品書き */
+.menu .wrap{padding:96px 0;display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.list{margin-top:24px}
+.list li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line-d)}
+.list li:last-child{border-bottom:1px solid var(--line-d)}
+.list h3{font-family:var(--mincho);font-size:16px;letter-spacing:.04em}
+.list small{display:block;color:var(--ink2);font-size:12px}
+.list .p{font-family:var(--num);font-size:20px;font-weight:700;color:var(--ink)}
+.list .p::after{content:"円";font-family:var(--sans);font-size:11px;margin-left:2px;color:var(--ink2)}
+.budget{display:grid;gap:12px;margin-top:24px}
+.plan{background:#fff;border:1px solid var(--line-d);border-radius:6px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;position:relative}
+.plan.pop{border-color:var(--aka)}
+.plan.pop::before{content:"いちばん多い";position:absolute;top:-10px;left:16px;background:var(--aka);color:#fff;font-size:11px;padding:2px 10px;border-radius:999px;letter-spacing:.08em}
+.plan h3{font-family:var(--mincho);font-size:16px}
+.plan small{display:block;color:var(--ink2);font-size:12px;margin-top:2px}
+.plan .p{font-family:var(--num);font-size:30px;font-weight:700;line-height:1}
+.plan .p::after{content:"円";font-family:var(--sans);font-size:12px;margin-left:2px;color:var(--ink2)}
+.menu .note{margin-top:14px;font-size:12px;color:var(--ink2)}
+
+/* 雰囲気 */
+.atmos .wrap{padding:96px 0 90px}
+.atmos .head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
+.atmos .strips{display:flex;gap:22px;margin-top:70px;overflow-x:auto;padding:0 6px 30px;scroll-snap-type:x proximity;scrollbar-width:none}
+.atmos .strips::-webkit-scrollbar{display:none}
+.atmos .strip{width:240px;scroll-snap-align:start}
+.atmos .strip:nth-child(2){margin-top:40px}
+.atmos .strip:nth-child(3){margin-top:12px}
+
+/* 声 */
+.voice .wrap{padding:90px 0}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.q{background:#fff;border-radius:6px;padding:26px 26px 22px;position:relative}
+.q::before{content:"“";font-family:var(--mincho);font-size:64px;line-height:1;color:var(--aka);position:absolute;top:10px;left:18px;opacity:.5}
+.q p{font-family:var(--mincho);font-size:16px;line-height:1.9;margin-top:14px}
+.q small{display:block;margin-top:14px;color:var(--ink2);font-size:12px}
+.voice .dis{font-size:12px;color:var(--ink2);margin-top:14px}
+
+/* 予約 */
+.reserve .wrap{padding:100px 0;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.steps{margin-top:26px;display:grid;gap:14px}
+.steps li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps b{font-family:var(--num);font-size:30px;line-height:1;color:var(--hi);font-weight:700}
+.steps h3{font-family:var(--mincho);font-size:16px}
+.steps p{font-size:14px;color:var(--mute);margin-top:2px}
+.rform{background:var(--sumi2);border:1px solid var(--line);border-radius:8px;padding:26px}
+.rform .f{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.rform label{font-size:12px;color:var(--mute);display:block}
+.rform .box{margin-top:4px;background:rgba(243,235,220,.06);border:1px solid var(--line);border-radius:4px;padding:11px 12px;font-size:14px;color:var(--paper)}
+.rform .full{grid-column:1/-1}
+.rform .btn{width:100%;justify-content:center;margin-top:18px}
+.rform p{font-size:12px;color:var(--mute);margin-top:12px}
+
+/* アクセス */
+.access{isolation:isolate;overflow:hidden}
+.access>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.35}
+.access::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--sumi) 30%,rgba(22,18,16,.6))}
+.access .wrap{padding:100px 0}
+.access .card{max-width:520px;background:rgba(22,18,16,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:8px;padding:26px}
+.access dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin-top:18px;font-size:14px}
+.access dt{color:var(--mute);white-space:nowrap}
+.access .map{margin-top:18px;aspect-ratio:16/8;border-radius:6px;background:
+  linear-gradient(90deg,transparent 48%,rgba(243,235,220,.25) 48% 52%,transparent 52%),
+  linear-gradient(0deg,transparent 60%,rgba(243,235,220,.18) 60% 63%,transparent 63%),
+  repeating-linear-gradient(45deg,rgba(243,235,220,.04) 0 8px,transparent 8px 20px),#231C17;position:relative}
+.access .map i{position:absolute;left:60%;top:40%;width:14px;height:14px;border-radius:50%;background:var(--aka);box-shadow:0 0 0 6px rgba(199,58,44,.25)}
+.access .map span{position:absolute;left:12px;bottom:10px;font-size:11px;color:var(--mute)}
+
+/* 巨大ロゴ */
+.bigword{overflow:hidden;padding:40px 0 60px}
+.bigword .wrap{font-family:var(--fude);font-size:clamp(70px,17vw,220px);line-height:1;color:rgba(243,235,220,.06);white-space:nowrap;letter-spacing:.04em}
+
+/* フッター */
+footer{border-top:1px solid var(--line);padding:34px 0 30px;font-size:12px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-size:16px}
+
+/* 下固定バー */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(22,18,16,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.bar p{font-size:12px;color:var(--mute);line-height:1.4}
+.bar p b{display:block;color:var(--paper);font-size:14px}
+.bar .btn{padding:12px 20px;font-size:14px}
+
+/* スマホ */
+@media (max-width:860px){
+  .wrap{width:min(1120px,100% - 32px)}
+  body{font-size:14px}
+  .hero .wrap{grid-template-columns:1fr;gap:26px;padding:110px 0 44px}
+  .hero h1{font-size:clamp(38px,11.5vw,56px)}
+  .tonight .wrap,.sumibi .wrap,.menu .wrap,.reserve .wrap,.kokuban .after{grid-template-columns:1fr;gap:36px;padding-top:70px;padding-bottom:70px}
+  .kokuban .head,.atmos .head{grid-template-columns:1fr;gap:12px}
+  .kokuban .wrap{padding:70px 0 80px}
+  .rail{margin-top:56px;margin-inline:-16px;padding:0 16px 24px;scroll-padding-inline:16px}
+  .atmos .strips{margin-top:56px;margin-inline:-16px;padding:0 16px 24px;scroll-padding-inline:16px}
+  .atmos .strip{width:200px}
+  .kokuban .after .strip{width:120px}
+  .quotes{grid-template-columns:1fr}
+  .temps{grid-template-columns:repeat(3,1fr);gap:8px}
+  .temp{padding:14px 6px}
+  .temp .num{font-size:32px}
+  .temp h3{font-size:13px}
+  .kan .cnt{gap:24px}
+  .kan .cnt b{font-size:38px}
+  .fact{grid-template-columns:80px 1fr}
+  .fact .num{font-size:32px}
+  .hours{display:none}
+  .rform .f{grid-template-columns:1fr}
+  .bar p{display:none}
+  .bar .wrap{justify-content:stretch}
+  .bar .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="intro" aria-hidden="true">
+  <div class="lantern" id="lantern"><i></i>酒</div>
+  <small>HIIRAGI</small>
+</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><i></i>ひいらぎ</a>
+    <div class="hours">17:00 – 24:00 / L.O. 23:30</div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/hero.jpg" alt="夜の裏通りから見た、白い割烹着の店主が立つカウンターの店" fetchpriority="high">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">〇〇駅 東口 徒歩3分・裏通り</div>
+      <h1 class="split" id="heroCopy"><span class="nw">今夜、</span><br><span class="nw">空いてます。</span></h1>
+      <p>炭火でひとつずつ焼く串と、温度を選べる燗。カウンター8席と小上がり2卓の小さな店です。席の空きは、この画面で。</p>
+      <div class="cta">
+        <a class="btn" href="#reserve" id="heroBtn">今夜の席を確保する
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="price">お通し込み 予算 <b>4,500</b>円〜</span>
+      </div>
+    </div>
+    <div class="board" aria-live="polite">
+      <div class="t"><span>Tonight</span><b id="nowTime">--:--</b></div>
+      <div class="row"><span>カウンター<small>8席</small></span><span class="pill" data-s="0" id="pCounter"><i>○</i><span>空席あり</span></span></div>
+      <div class="row"><span>小上がり<small>2卓</small></span><span class="pill" data-s="0" id="pZashiki"><i>○</i><span>空席あり</span></span></div>
+      <p class="note"><span id="upd">更新 --:--</span>・スタッフがボタンで切り替え。<a href="#tonight">詳しく</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="tonight light" id="tonight">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Tonight's seats</div>
+      <h2 class="h2 split"><span class="nw">電話しなくても、</span><br><span class="nw">わかるように。</span></h2>
+      <p class="lead">「今日、空いてる？」の電話を焼き場で取るのは大変です。だから席の空きは、スタッフがレジ横のボタンで切り替えるだけ。お客さんは見てから来る。店は焼くことに集中できる。</p>
+      <div class="why">
+        <div><b>01</b><div><h3>空きは3段階だけ</h3><p>○ 空席あり / △ 残りわずか / × 満席。細かい席数は出さず、迷わせません。</p></div></div>
+        <div><b>02</b><div><h3>更新した時刻を必ず出す</h3><p>「いつの情報か」が見えるので、古い表示で来てしまうことを防ぎます。</p></div></div>
+        <div><b>03</b><div><h3>満席なら、言葉も変わる</h3><p>一番上のコピーとボタンが「明日の席を確保する」に切り替わります。</p></div></div>
+      </div>
+    </div>
+    <div class="bigboard reveal">
+      <div class="t"><div class="num" id="bigTime">--:--</div><span id="bigDate">—</span></div>
+      <div class="seat">
+        <div><h3>カウンター</h3><small>焼き場の目の前・8席</small></div>
+        <span class="pill" data-s="0" id="bCounter"><i>○</i><span>空席あり</span></span>
+        <div class="dots" id="dCounter" aria-hidden="true"></div>
+      </div>
+      <div class="seat">
+        <div><h3>小上がり</h3><small>靴を脱いで・4名×2卓</small></div>
+        <span class="pill" data-s="0" id="bZashiki"><i>○</i><span>空席あり</span></span>
+        <div class="dots" id="dZashiki" aria-hidden="true"></div>
+      </div>
+      <div class="hourly">
+        <div class="lab">今夜の空き予測(目安)</div>
+        <div class="cells">
+          <div><b>○</b>17–19時</div><div><b>△</b>19–21時</div><div><b>×</b>21–22時</div><div><b>○</b>22時〜</div>
+        </div>
+      </div>
+      <div class="foot"><span>更新 <span id="bigUpd">--:--</span>・※空き状況は架空のイメージです</span><button type="button" id="demo">デモ: 状態を切り替える</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>SUMIBI<i></i><em>炭火と燗 ひいらぎ</em><i></i>KAN<i></i><em>23:30 L.O.</em><i></i>〇〇駅 東口 3分<i></i></span>
+  <span>SUMIBI<i></i><em>炭火と燗 ひいらぎ</em><i></i>KAN<i></i><em>23:30 L.O.</em><i></i>〇〇駅 東口 3分<i></i></span>
+</div></div>
+
+<section class="kokuban">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Today's board</div>
+        <h2 class="h2 split"><span class="nw">今夜の黒板は、</span><br><span class="nw">毎日3分で</span><span class="nw">書き換え。</span></h2>
+        <p class="lead">おすすめは日替わり。スタッフが夕方、スマホから5品を入れ替えます。「今日は何がある？」の電話も、ここで減らします。</p>
+      </div>
+      <div class="date"><small>Board of</small><span id="boardDate">—</span></div>
+    </div>
+    <div class="rail" id="rail">
+      <figure class="strip tz new"><span class="tag">本日</span><div class="v">本日の刺身<small>三点盛り</small></div><div class="p">980</div></figure>
+      <figure class="strip tz"><div class="v">新さんま<small>炭火焼き</small></div><div class="p">780</div></figure>
+      <figure class="strip tz"><div class="v">鶏もも<small>柚子胡椒</small></div><div class="p">220</div></figure>
+      <figure class="strip tz new"><span class="tag">本日</span><div class="v">牡蠣の酒蒸し<small>二個</small></div><div class="p">880</div></figure>
+      <figure class="strip tz"><div class="v">とろ湯葉<small>わさび醤油</small></div><div class="p">580</div></figure>
+      <figure class="strip tz"><div class="v">自家製 ぬか漬け<small>五種</small></div><div class="p">480</div></figure>
+    </div>
+    <div class="after">
+      <p class="reveal">短冊は、店の壁に下がっている本物と同じ順番。サイトを見てから来た人が、店で同じ札を見つけて「あ、これだ」となるように。</p>
+      <div class="pics">
+        <figure class="strip"><div class="ph"><img src="img/smoke.jpg" alt="煙の立つ焼き台の上で焼かれる串" loading="lazy"></div><figcaption>焼き台</figcaption></figure>
+        <figure class="strip"><div class="ph"><img src="img/table.jpg" alt="串焼きと飲み物が並ぶ木のテーブル" loading="lazy"></div><figcaption>まずは一本</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sumibi light">
+  <div class="wrap">
+    <div class="photo reveal">
+      <figure class="strip"><div class="ph"><img src="img/grill.jpg" alt="赤く熾った炭の上で焼かれる肉" loading="lazy"></div><figcaption>備長炭</figcaption></figure>
+      <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Sumibi</div>
+      <h2 class="h2 split"><span class="nw">注文を聞いてから、</span><br><span class="nw">一本ずつ。</span></h2>
+      <p class="lead">焼き置きはしません。カウンターの目の前の焼き台で、備長炭の遠火でじっくり。待つ時間は、燗が温まる時間と同じくらいです。</p>
+      <div class="facts">
+        <div class="fact"><div class="num"><span data-to="14">14</span><small>種</small></div><div><h3>串は14種類</h3><p>鶏が8種、豚と野菜が6種。塩かタレは焼き手にお任せでも。</p></div></div>
+        <div class="fact"><div class="num"><span data-to="4">4</span><small>分</small></div><div><h3>一本、約4分</h3><p>遠火の強火でゆっくり。だから皮はぱりっと、中はしっとり。</p></div></div>
+        <div class="fact"><div class="num">1.5<small>m</small></div><div><h3>焼き台まで1.5m</h3><p>カウンターからの距離。煙と音まで、肴のうちです。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kan">
+  <img src="img/sake.jpg" alt="木のカウンターに置かれた徳利と二つの猪口" loading="lazy">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Kan</div>
+      <h2 class="h2 split"><span class="nw">温度で、</span><span class="nw">味が変わる。</span></h2>
+      <p class="lead">同じ酒でも、温度が違えば別の酒。ひいらぎでは、燗の温度を3つから選べます。迷ったら「ぬる燗」から。押すと、その温度に合う今夜の一本が出ます。</p>
+    </div>
+    <div class="temps" role="tablist" aria-label="燗の温度">
+      <button class="temp" type="button" data-k="0" role="tab"><span class="num"><span data-to="35">35</span><small>℃</small></span><h3>人肌燗</h3></button>
+      <button class="temp on" type="button" data-k="1" role="tab" aria-selected="true"><span class="num"><span data-to="40">40</span><small>℃</small></span><h3>ぬる燗</h3></button>
+      <button class="temp" type="button" data-k="2" role="tab"><span class="num"><span data-to="50">50</span><small>℃</small></span><h3>熱燗</h3></button>
+    </div>
+    <div class="pick" id="pick" aria-live="polite"><b>純米 ひいらぎの定番(架空銘柄)</b><p>ふくらみが出て、串のタレとちょうどいい。一合 780円。</p></div>
+    <div class="cnt">
+      <div><b><span data-to="12">12</span></b>日本酒 常時</div>
+      <div><b><span data-to="3">3</span></b>選べる温度</div>
+      <div><b>780<small style="font-size:14px;font-family:var(--sans);color:var(--mute)">円〜</small></b>一合</div>
+    </div>
+  </div>
+</section>
+
+<section class="menu light" id="menu">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Menu</div>
+      <h2 class="h2 split"><span class="nw">お品書き。</span></h2>
+      <p class="lead">定番はこの5つ。黒板の日替わりと合わせてどうぞ。</p>
+      <ul class="list">
+        <li><div><h3>おまかせ串 五本</h3><small>その日の良いところから</small></div><span class="p">1,280</span></li>
+        <li><div><h3>つくね 月見</h3><small>黄身を絡めて</small></div><span class="p">320</span></li>
+        <li><div><h3>炭火焼き 厚揚げ</h3><small>生姜醤油</small></div><span class="p">420</span></li>
+        <li><div><h3>お茶漬け(鯛・梅)</h3><small>締めに</small></div><span class="p">580</span></li>
+        <li><div><h3>燗酒 一合</h3><small>温度は3つから</small></div><span class="p">780〜</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Budget</div>
+      <h2 class="h2"><span class="nw">予算の目安。</span></h2>
+      <div class="budget">
+        <div class="plan"><div><h3>さくっと一杯</h3><small>串3本+燗一合、1時間</small></div><span class="p">2,500</span></div>
+        <div class="plan pop"><div><h3>ふつうに晩酌</h3><small>串5本+肴2品+燗二合</small></div><span class="p">4,500</span></div>
+        <div class="plan"><div><h3>しっかり</h3><small>黒板から好きに+締めまで</small></div><span class="p">6,500</span></div>
+      </div>
+      <p class="note">お通し400円を含む、一人あたりの目安です。表示はすべて税込。</p>
+    </div>
+  </div>
+</section>
+
+<section class="atmos">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Inside</div>
+        <h2 class="h2 split"><span class="nw">8席と、</span><span class="nw">2卓。</span></h2>
+      </div>
+      <p class="lead" style="margin-top:0">大きな店ではありません。その代わり、焼き手の手元が見える距離で。小上がりは靴を脱いで、少し長く。</p>
+    </div>
+    <div class="strips">
+      <figure class="strip"><div class="ph"><img src="img/chef.jpg" alt="小窓越しに見える厨房で料理をする店主" loading="lazy"></div><figcaption>焼き場の目の前</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/pour.jpg" alt="徳利から猪口に酒を注ぐ手元" loading="lazy"></div><figcaption>燗は徳利で</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/skewers.jpg" alt="焼き台に並ぶたくさんの串" loading="lazy"></div><figcaption>仕込みは夕方から</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="voice light">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Voices</div>
+      <h2 class="h2 split"><span class="nw">お客さんの声。</span></h2>
+    </div>
+    <div class="quotes">
+      <div class="q"><p>仕事帰り、駅でサイトを開いて「○」なら寄る。電話しなくていいのが、いちばん楽。</p><small>40代・会社員(架空)</small></div>
+      <div class="q"><p>黒板を見てから来るようになった。牡蠣の日は、たいてい自分がいる。</p><small>50代・近所の常連(架空)</small></div>
+    </div>
+    <p class="dis">※架空の声です。</p>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Reserve</div>
+      <h2 class="h2 split"><span class="nw">席の確保は、</span><br><span class="nw">1分で。</span></h2>
+      <p class="lead">当日でも大丈夫です。焼き場に立っている時間は電話に出られないことがあるので、サイトからが確実です。</p>
+      <ul class="steps">
+        <li><b>1</b><div><h3>席と時間を選ぶ</h3><p>カウンターか小上がり。来る時間を30分刻みで。</p></div></li>
+        <li><b>2</b><div><h3>人数と名前</h3><p>それだけ。会員登録はありません。</p></div></li>
+        <li><b>3</b><div><h3>確定のメッセージが届く</h3><p>LINE かメールで。変更も同じ画面から。</p></div></li>
+      </ul>
+    </div>
+    <div class="rform reveal" aria-label="予約フォーム(デモ)">
+      <div class="eyebrow">Tonight</div>
+      <div class="f">
+        <div><label>席</label><div class="box">カウンター</div></div>
+        <div><label>時間</label><div class="box">19:30</div></div>
+        <div><label>人数</label><div class="box">2名</div></div>
+        <div><label>お名前</label><div class="box">　</div></div>
+      </div>
+      <a class="btn" href="#" id="formBtn">この内容で席を確保する
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p>※制作例のため送信されません。実際はLINE予約・メール予約につなぎます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="access" id="access">
+  <img src="img/skewers.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <div class="card reveal">
+      <div class="eyebrow">Access</div>
+      <h2 class="h2 split"><span class="nw">裏通りの、</span><span class="nw">赤い提灯。</span></h2>
+      <dl>
+        <dt>住所</dt><dd>〇〇市〇〇町1-2-3 裏通りビル 1F(架空)</dd>
+        <dt>最寄り</dt><dd>〇〇駅 東口 徒歩3分。コンビニの角を左、赤い提灯が目印</dd>
+        <dt>営業</dt><dd>17:00 – 24:00(L.O. 23:30)</dd>
+        <dt>定休</dt><dd>日曜・祝日の月曜</dd>
+        <dt>電話</dt><dd>000-0000-0000(焼き中は出られないことがあります)</dd>
+        <dt>席</dt><dd>カウンター8席・小上がり2卓(4名×2)・貸切は12名まで</dd>
+      </dl>
+      <div class="map" aria-hidden="true"><i></i><span>地図は架空です</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="bigword" aria-hidden="true"><div class="wrap">炭火と燗 ひいらぎ</div></div>
+
+<footer>
+  <div class="wrap">
+    <div><b>炭火と燗 ひいらぎ</b><br>〇〇市〇〇町1-2-3(架空)・000-0000-0000</div>
+    <div>※このサイトは架空のお店の制作例です。制作: ノレン<br>Photos: Unsplash</div>
+  </div>
+</footer>
+
+<div class="bar">
+  <div class="wrap">
+    <p><b id="barMsg">今夜、カウンター空いてます</b>お通し込み 予算4,500円〜</p>
+    <a class="btn" href="#reserve" id="barBtn">今夜の席を確保する</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== 今夜の席(架空のデモ。実運用はスタッフがボタンで切り替える) ===== */
+const ST=[["○","空席あり"],["△","残りわずか"],["×","満席"]];
+/* [カウンター状態, 小上がり状態, カウンター埋まり席数, 小上がり埋まり卓数] */
+const SCENES=[[0,0,2,0],[0,1,4,1],[1,2,6,2],[2,2,8,2]];
+let scene=0, fakeUpd=null;
+const pad=n=>String(n).padStart(2,"0");
+function fmt(d){return pad(d.getHours())+":"+pad(d.getMinutes())}
+function sceneByHour(h){ return h<19?0:h<21?1:h<22?2:h<24?1:0 }
+function setPill(id,s){const el=document.getElementById(id);el.dataset.s=s;el.querySelector("i").textContent=ST[s][0];el.querySelector("span").textContent=ST[s][1]}
+function dots(id,total,used){document.getElementById(id).innerHTML=Array.from({length:total},(_,i)=>`<i class="${i<used?"on":""}"></i>`).join("")}
+function paint(){
+  const d=new Date(), h=d.getHours();
+  const [c,z,cu,zu]=SCENES[scene];
+  ["nowTime","bigTime"].forEach(id=>document.getElementById(id).textContent=fmt(d));
+  const upd=fakeUpd||fmt(new Date(d.getTime()-7*60000));
+  document.getElementById("upd").textContent="更新 "+upd; document.getElementById("bigUpd").textContent=upd;
+  const w=["日","月","火","水","木","金","土"][d.getDay()];
+  document.getElementById("bigDate").textContent=`${d.getMonth()+1}/${d.getDate()} ${w}`;
+  document.getElementById("boardDate").textContent=`${d.getMonth()+1}月${d.getDate()}日(${w})`;
+  setPill("pCounter",c);setPill("pZashiki",z);setPill("bCounter",c);setPill("bZashiki",z);
+  dots("dCounter",8,cu);dots("dZashiki",2,zu);
+  const worst=Math.min(c,z), full=(c===2&&z===2);
+  const copy=full?'<span class="nw">今夜は、</span><br><span class="nw">満席です。</span>':worst===0?'<span class="nw">今夜、</span><br><span class="nw">空いてます。</span>':'<span class="nw">今夜、</span><br><span class="nw">あと少し。</span>';
+  const hc=document.getElementById("heroCopy"); if(hc.dataset.copy!==copy){hc.innerHTML=copy;hc.dataset.copy=copy;if(window.__splitHero)window.__splitHero()}
+  const btn=full?"明日の席を確保する":"今夜の席を確保する";
+  ["heroBtn","barBtn"].forEach(id=>{const b=document.getElementById(id);b.childNodes[0].textContent=btn});
+  document.getElementById("barMsg").textContent=full?"今夜は満席・明日の席を":c===0?"今夜、カウンター空いてます":z===0?"今夜、小上がり空いてます":"今夜、残りわずか";
+}
+scene=sceneByHour(new Date().getHours());
+paint(); setInterval(paint,60000);
+document.getElementById("demo").addEventListener("click",()=>{scene=(scene+1)%SCENES.length;fakeUpd=fmt(new Date());paint()});
+
+/* ===== 燗の温度 ===== */
+const PICK=[
+  ["純米吟醸 春の霞(架空銘柄)","香りがやわらかく立つ温度。刺身の三点盛りに。一合 880円。"],
+  ["純米 ひいらぎの定番(架空銘柄)","ふくらみが出て、串のタレとちょうどいい。一合 780円。"],
+  ["本醸造 冬の蔵(架空銘柄)","きれが出て、脂の乗ったさんまに。一合 780円。"]
+];
+document.querySelectorAll(".temp").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".temp").forEach(x=>{x.classList.remove("on");x.removeAttribute("aria-selected")});
+  b.classList.add("on");b.setAttribute("aria-selected","true");
+  const [t,p]=PICK[+b.dataset.k]; const el=document.getElementById("pick"); el.innerHTML=`<b>${t}</b><p>${p}</p>`;
+  if(window.gsap&&!matchMedia("(prefers-reduced-motion: reduce)").matches) gsap.from(el,{y:10,opacity:0,duration:.45,ease:"power3.out"});
+}));
+document.getElementById("formBtn").addEventListener("click",e=>{e.preventDefault();alert("制作例のため送信されません。実際はLINE予約・メール予約につなぎます。")});
+
+/* ===== 動き ===== */
+/* ?static=1 で動きなし(確認用・一覧サムネ用) */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches||new URLSearchParams(location.search).has("static");
+const fine=matchMedia("(pointer: fine)").matches;
+function splitChars(el){
+  const walk=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=document.createDocumentFragment();[...c.textContent].forEach(ch=>{if(ch.trim()===""){f.append(ch);return}const sp=document.createElement("span");sp.className="ch";sp.style.display="inline-block";sp.textContent=ch;f.append(sp)});c.replaceWith(f)}
+    else if(c.nodeType===1&&c.tagName!=="BR") walk(c)})};
+  walk(el); return el.querySelectorAll(".ch");
+}
+function startMotion(){
+  if(reduce||!window.gsap||!window.ScrollTrigger){const i=document.querySelector(".intro");if(i)i.style.display="none";return}
+  document.documentElement.classList.add("motion");
+  gsap.registerPlugin(ScrollTrigger);
+  if(window.Lenis){const lenis=new Lenis({lerp:.09});lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const id=a.getAttribute("href");if(id.length>1){e.preventDefault();lenis.scrollTo(id,{offset:-20})}}));}
+
+  /* オープニング: 提灯に灯が入る */
+  const intro=document.querySelector(".intro"), lan=document.getElementById("lantern");
+  let seen=false; try{seen=!!sessionStorage.getItem("hiIntro");sessionStorage.setItem("hiIntro","1")}catch(e){}
+  const tl=gsap.timeline();
+  const heroH1=document.querySelector(".hero h1");
+  window.__splitHero=()=>{const chs=splitChars(heroH1);gsap.from(chs,{yPercent:110,opacity:0,duration:.8,stagger:.04,ease:"power4.out"})};
+  let heroChars=splitChars(heroH1);
+  if(seen){ gsap.set(intro,{display:"none"}) } else {
+    tl.fromTo(lan,{backgroundColor:"#4a1a14",color:"rgba(243,235,220,.35)",boxShadow:"0 0 0 rgba(231,70,44,0)"},
+      {backgroundColor:"#E0452F",color:"rgba(255,250,240,.95)",boxShadow:"0 0 80px 18px rgba(231,70,44,.45)",duration:1.1,ease:"power2.inOut",delay:.2})
+      .to(lan,{boxShadow:"0 0 60px 10px rgba(231,70,44,.35)",duration:.25,yoyo:true,repeat:1,ease:"sine.inOut"})
+      .to(intro,{yPercent:-100,duration:.9,ease:"power4.inOut"},"+=.2")
+      .set(intro,{display:"none"});
+  }
+  tl.from(".hero>img",{scale:1.2,duration:2.2,ease:"power3.out"},seen?0:"-=.9")
+    .from(heroChars,{yPercent:120,opacity:0,rotate:4,duration:.9,stagger:.04,ease:"power4.out"},"-=1.9")
+    .from(".hero .eyebrow, .hero p, .hero .cta, header",{y:22,opacity:0,duration:.8,stagger:.08,ease:"power3.out"},"-=.9")
+    .from(".hero .board",{y:30,opacity:0,duration:.9,ease:"power3.out"},"-=.7");
+  /* ヒーロー: スクロールで奥へ */
+  gsap.to(".hero>img",{yPercent:16,scale:1.06,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+  gsap.to(".hero .wrap",{yPercent:-24,opacity:0,ease:"none",scrollTrigger:{trigger:".hero",start:"45% top",end:"bottom top",scrub:true}});
+  /* 見出し: 1文字ずつ / 英字は字間が詰まる */
+  document.querySelectorAll("h2.split").forEach(h=>{const chs=splitChars(h);
+    gsap.from(chs,{yPercent:100,opacity:0,duration:.8,stagger:.03,ease:"power3.out",scrollTrigger:{trigger:h,start:"top 85%"}})});
+  gsap.utils.toArray("section .eyebrow").forEach(e=>gsap.from(e,{letterSpacing:"0.7em",opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:e,start:"top 88%"}}));
+  /* 文章やカードはふわっと */
+  gsap.utils.toArray(".lead,.why>div,.fact,.plan,.list li,.q,.steps li,.rform,.access .card,.kan .pick,.kan .cnt div,.kokuban .after p,.date,.bigboard").forEach(el=>
+    gsap.from(el,{y:28,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%"}}));
+  /* 短冊: 上から吊り下がって、少し揺れる */
+  gsap.utils.toArray(".strip").forEach((s,i)=>{
+    gsap.from(s,{yPercent:-18,opacity:0,rotation:i%2?3:-3,duration:1.1,ease:"back.out(1.4)",scrollTrigger:{trigger:s,start:"top 92%"}});
+    gsap.to(s,{rotation:i%2?1.2:-1.2,duration:2.4+(i%3)*.5,yoyo:true,repeat:-1,ease:"sine.inOut",delay:(i%4)*.3});
+    const img=s.querySelector(".ph img"); if(img) gsap.fromTo(img,{yPercent:-6,scale:1.15},{yPercent:6,scale:1.15,ease:"none",scrollTrigger:{trigger:s,start:"top bottom",end:"bottom top",scrub:true}});
+  });
+  /* 燗・アクセスの背景: パララックス */
+  gsap.fromTo(".kan>img",{yPercent:-10,scale:1.15},{yPercent:10,scale:1.15,ease:"none",scrollTrigger:{trigger:".kan",start:"top bottom",end:"bottom top",scrub:true}});
+  gsap.fromTo(".access>img",{yPercent:-10,scale:1.15},{yPercent:10,scale:1.15,ease:"none",scrollTrigger:{trigger:".access",start:"top bottom",end:"bottom top",scrub:true}});
+  /* 温度カードは順に */
+  gsap.from(".temp",{y:24,opacity:0,duration:.7,stagger:.12,ease:"power3.out",scrollTrigger:{trigger:".temps",start:"top 88%"}});
+  /* 数字がカウントアップ */
+  document.querySelectorAll("[data-to]").forEach(el=>{const to=+el.dataset.to,o={v:0};
+    ScrollTrigger.create({trigger:el,start:"top 92%",once:true,onEnter:()=>gsap.to(o,{v:to,duration:1.4,ease:"power2.out",onUpdate:()=>el.textContent=Math.round(o.v).toLocaleString("ja-JP")})})});
+  /* 席のドットが順に埋まる */
+  ScrollTrigger.create({trigger:".bigboard",start:"top 85%",once:true,onEnter:()=>gsap.from(".seat .dots i.on",{scaleY:0,transformOrigin:"50% 100%",duration:.6,stagger:.06,ease:"power3.out"})});
+  /* 人気の予算: ゆっくり光る */
+  gsap.fromTo(".plan.pop",{boxShadow:"0 0 0 0 rgba(199,58,44,0)"},{boxShadow:"0 0 36px 0 rgba(199,58,44,.22)",duration:1.6,repeat:-1,yoyo:true,ease:"sine.inOut"});
+  /* 最後のロゴが横から */
+  gsap.fromTo(".bigword .wrap",{xPercent:14},{xPercent:-6,ease:"none",scrollTrigger:{trigger:".bigword",start:"top bottom",end:"bottom 60%",scrub:true}});
+  /* PC: マグネットボタン */
+  if(fine){
+    document.querySelectorAll(".btn").forEach(b=>{
+      b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4,ease:"power3"})});
+      b.addEventListener("pointerleave",()=>gsap.to(b,{x:0,y:0,duration:.6,ease:"elastic.out(1,.4)"}));
+    });
+  }
+}
+if(document.readyState==="complete") startMotion(); else addEventListener("load",startMotion);
+</script>
+</body>
+</html>
