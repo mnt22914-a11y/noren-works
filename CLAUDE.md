@@ -11,6 +11,12 @@
 5. スマホ表示を最優先(幅 375px で崩れない)。予約・問い合わせボタンは画面下に固定。
 6. 本人の記録(`works/index.json` の `approved` なもの、`承認` 済みフォルダ)は書き換えない。修正は `pending` のものだけ。
 7. 出力・コミットメッセージはすべて日本語。
+8. **誰でも体験できるように作る(2026-10-11〜)。** 一覧ページ(index.html)が体験の入口。各サイトは
+   - `?static=1` で動きを切れる分岐を入れる(確認スクショ・サムネ用)。
+   - フッターに「← ノレンの制作例一覧へ」(`../../`)を置く。
+   - 業種の悩みに答える「触れる仕掛け」を1〜2個入れ、営業で押して見せられるデモ操作(例: 「デモ: 状態を切り替える」)を画面内に置く。
+   - `works/index.json` の1件に `try`(触りどころ 3〜4行)・`shape`(店の形)・`static`(?static=1 対応)を書く。
+   - 作ったら `python3 tools/thumb.py <slug>` で `thumb.jpg`(PC)と `thumb_sp.jpg`(スマホ)を作ってコミットする。一覧はこの2枚を使う(iframe は使わない)。
 
 ## サイトの型(固定)
 上から順に:
@@ -42,7 +48,8 @@ works/
     ブリーフ.md               … 架空クライアント設定(テンプレは ブリーフ_テンプレ.md)
     index.html                … サイト本体
     投稿.md                   … Instagram 用キャプション案(1枚目/2枚目の文言 + ハッシュタグ)
-index.html                    … 一覧ページ(approved だけ表示。?all=1 で pending も表示)
+index.html                    … 一覧ページ=体験の入口(approved だけ表示。?all=1 で pending も表示)
+tools/thumb.py                … サムネ生成(PC/スマホ)
 ```
 
 ### works/index.json の1件
@@ -56,9 +63,13 @@ index.html                    … 一覧ページ(approved だけ表示。?all=1
   "problem": "体験予約がLINE頼みで取りこぼしていた",
   "solution": "体験予約ボタンを画面下に固定し、料金を先に見せた",
   "status": "pending",
-  "thread_subject": "[noren-works] 承認待ち: 2026-10-01_gym-force"
+  "thread_subject": "[noren-works] 承認待ち: 2026-10-01_gym-force",
+  "shape": "縦長の窓",
+  "static": true,
+  "try": ["開くと…", "〇〇を押すと…", "スクロールで…"]
 }
 ```
+`thumb.jpg` / `thumb_sp.jpg` は `tools/thumb.py` が同じフォルダに作る。
 `status` は `pending` → `approved`(CEO承認) または `rejected`(ボツ・一覧に出さない)。
 
 ## 承認の流れ

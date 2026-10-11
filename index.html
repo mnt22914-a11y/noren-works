@@ -3,84 +3,150 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>制作実績 | ノレン</title>
-<meta name="description" content="ノレン(代表 石井 愛斗)の Web 制作実績。地元のジム・飲食店・美容室向けの1ページサイト制作例。">
+<title>制作例を触る | ノレン</title>
+<meta name="description" content="ノレン(代表 石井 愛斗)の Web 制作例。地元のジム・居酒屋・カフェ・美容室向けの1ページサイトを、架空のお店で作っています。動きも仕掛けも、ここでそのまま触れます。">
+<meta property="og:title" content="制作例を触る | ノレン">
+<meta property="og:description" content="架空のお店のサイトを、そのまま触ってみてください。あなたのお店版も作れます。">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ai:#2B3A67; --kinari:#F6F1E7; --kincha:#B08A3E;
-    --bg:var(--kinari); --fg:#1f2433; --muted:#6b6f7a; --card:#fff; --line:#e6dfd2;
+    --ai:#2B3A67; --ai2:#1F2B50; --kinari:#F6F1E7; --kin:#B08A3E; --kin2:#D9B979;
+    --bg:var(--kinari); --fg:#1F2433; --muted:#6B6F7A; --card:#FFFDF8; --line:rgba(43,58,103,.16);
+    --mincho:"Shippori Mincho",serif; --sans:"Zen Kaku Gothic New",system-ui,sans-serif; --num:"Barlow Condensed",sans-serif;
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){ --bg:#151a28; --fg:#f2eee6; --muted:#a9adb8; --card:#1f2538; --line:#2e3550; }
+    :root:not([data-theme="light"]){ --bg:#151A28; --fg:#F2EEE6; --muted:#A9ADB8; --card:#1C2131; --line:rgba(246,241,231,.14); --kin:#D4B06A; }
   }
-  :root[data-theme="dark"]{ --bg:#151a28; --fg:#f2eee6; --muted:#a9adb8; --card:#1f2538; --line:#2e3550; }
+  :root[data-theme="dark"]{ --bg:#151A28; --fg:#F2EEE6; --muted:#A9ADB8; --card:#1C2131; --line:rgba(246,241,231,.14); --kin:#D4B06A; }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.7}
-  header{background:var(--ai);color:#fff;padding:40px 16px 32px}
-  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
-  h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:28px;margin:0 0 6px;letter-spacing:.04em}
-  header p{margin:0;opacity:.85;font-size:14px}
-  header .tag{display:inline-block;margin-top:14px;padding:4px 12px;border:1px solid var(--kincha);color:var(--kincha);border-radius:999px;font-size:12px;letter-spacing:.1em}
-  main{padding:28px 0 60px}
-  .note{font-size:13px;color:var(--muted);margin:0 0 20px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-  .thumb{position:relative;aspect-ratio:16/10;background:#e9e4da;overflow:hidden}
-  .thumb iframe{position:absolute;inset:0;width:200%;height:200%;transform:scale(.5);transform-origin:0 0;border:0;pointer-events:none}
-  .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-  .meta{font-size:12px;color:var(--muted)}
-  .meta b{color:var(--kincha);font-weight:700}
-  h2{font-family:"Shippori Mincho",serif;font-size:18px;margin:0}
-  .ps{font-size:13px;margin:4px 0 0}
-  .ps span{display:block}
-  .ps .p::before{content:"課題 ";color:var(--muted);font-size:11px}
-  .ps .s::before{content:"解決 ";color:var(--kincha);font-size:11px}
-  .btn{margin-top:auto;padding-top:10px}
-  .btn a{display:inline-block;background:var(--ai);color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-size:14px}
-  .pending{border:1px dashed var(--kincha)}
-  .pending .meta::after{content:" 承認待ち";color:#c0392b}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.8;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  .eyebrow{font-family:var(--num);font-weight:600;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--kin2)}
+  /* 頭 */
+  header{background:linear-gradient(180deg,#30406F,var(--ai) 60%,var(--ai2));color:var(--kinari);padding:56px 0 48px;position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 380px at 85% 10%,rgba(176,138,62,.25),rgba(176,138,62,0) 70%)}
+  header .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end}
+  h1{font-family:var(--mincho);font-weight:700;font-size:clamp(28px,4.6vw,44px);line-height:1.35;margin:8px 0 0;letter-spacing:.04em;text-wrap:balance}
+  header p{margin:16px 0 0;color:rgba(246,241,231,.82);max-width:34em}
+  .how{background:rgba(246,241,231,.08);border:1px solid rgba(246,241,231,.18);border-radius:10px;padding:16px 18px;font-size:13px}
+  .how b{display:block;font-family:var(--mincho);font-size:15px;margin-bottom:6px;color:var(--kin2)}
+  .how ol{margin:0;padding-left:1.3em;color:rgba(246,241,231,.85)}
+  .how li+li{margin-top:2px}
+  /* 一覧 */
+  main{padding:36px 0 64px}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .toolbar p{margin:0;font-size:13px;color:var(--muted)}
+  .count{font-family:var(--num);font-size:14px;letter-spacing:.14em;color:var(--kin)}
+  .grid{display:grid;gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+  .shots{position:relative;background:#0D1428;aspect-ratio:16/11;min-width:0}
+  .shots .pc{position:absolute;left:0;top:0;width:88%;height:100%;object-fit:cover;object-position:top}
+  .shots .sp{position:absolute;right:4%;bottom:6%;width:24%;aspect-ratio:375/812;object-fit:cover;object-position:top;border:3px solid var(--kinari);border-radius:12px;background:#000;box-shadow:0 20px 40px -16px rgba(0,0,0,.6)}
+  .shots .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(246,241,231,.6);font-size:13px}
+  .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);align-items:center}
+  .meta b{color:var(--kin);font-weight:700}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 9px;border:1.5px solid currentColor;border-radius:3px}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .pill.ok{color:#2E7D4F}.pill.wait{color:#B8641A}
+  h2{font-family:var(--mincho);font-size:21px;margin:2px 0 0;letter-spacing:.04em;line-height:1.4}
+  .ps{font-size:13.5px;margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+  .ps dt{font-family:var(--num);font-size:11px;letter-spacing:.16em;color:var(--kin);padding-top:4px}
+  .ps dd{margin:0}
+  .try{margin:6px 0 0;padding:0;list-style:none;font-size:13px;color:var(--muted);display:grid;gap:2px;border-top:1px solid var(--line);padding-top:8px}
+  .try li{display:grid;grid-template-columns:14px 1fr;gap:6px}
+  .try li::before{content:"▸";color:var(--kin)}
+  .btns{margin-top:auto;padding-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .btn{display:inline-block;background:var(--ai);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:14px;font-weight:700}
+  .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+  .btn:hover{opacity:.9}
+  .btn:focus-visible{outline:2px solid var(--kin);outline-offset:2px}
   .empty{color:var(--muted);text-align:center;padding:60px 0}
-  footer{border-top:1px solid var(--line);padding:24px 16px;font-size:12px;color:var(--muted);text-align:center}
+  /* 下 */
+  .cta{margin-top:40px;background:var(--ai);color:var(--kinari);border-radius:14px;padding:28px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+  .cta h3{font-family:var(--mincho);font-size:22px;margin:4px 0 0;letter-spacing:.04em}
+  .cta p{margin:8px 0 0;font-size:14px;color:rgba(246,241,231,.85)}
+  .cta .btn{background:var(--kin);color:#1A1407}
+  footer{border-top:1px solid var(--line);padding:24px 20px;font-size:12px;color:var(--muted);text-align:center}
+  @media (max-width:760px){
+    header{padding:44px 0 36px}
+    header .wrap{grid-template-columns:1fr}
+    .card{grid-template-columns:1fr}
+    .shots{aspect-ratio:16/10}
+    .cta{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <h1>制作実績</h1>
-    <p>ノレン ― 暖簾の向こうに、人を。</p>
-    <span class="tag">WORKS</span>
+    <div>
+      <div class="eyebrow">Noren / works</div>
+      <h1>架空のお店のサイトを、<br>そのまま触れます。</h1>
+      <p>ノレンは、地元のジム・居酒屋・カフェ・美容室向けに「お客さんの質問にサイトが先に答える」1ページサイトを作っています。ここにある店はすべて架空ですが、動きも仕掛けも本番と同じです。</p>
+    </div>
+    <div class="how">
+      <b>見かた</b>
+      <ol>
+        <li>「体験する」を押すと、サイトがそのまま開きます</li>
+        <li>各作品の「触りどころ」を試してみてください</li>
+        <li>戻るときは、サイト下の「制作例一覧へ」か、ブラウザの戻る</li>
+      </ol>
+    </div>
   </div>
 </header>
 <main>
   <div class="wrap">
-    <p class="note">地元のお店向けの1ページサイト制作例です。掲載しているお店はすべて架空です。「あなたのお店版」もお作りできます。</p>
+    <div class="toolbar">
+      <p>掲載しているお店はすべて架空です。写真は Unsplash の無料写真を使っています。</p>
+      <span class="count" id="count"></span>
+    </div>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty" hidden>まだ作品がありません。</p>
+    <div class="cta">
+      <div>
+        <div class="eyebrow">For your shop</div>
+        <h3>あなたのお店のホームページを、無料で作ります。</h3>
+        <p>お店によく来る質問を3つ教えてください。それに答えるホームページを作ってお送りします。売り込みの連絡はしません。</p>
+      </div>
+      <a class="btn" href="https://www.instagram.com/noren_llc/" target="_blank" rel="noopener">Instagram で「見本」とDM</a>
+    </div>
   </div>
 </main>
 <footer>© ノレン(代表 石井 愛斗) ・ お問い合わせ: noren.mar.llc@gmail.com</footer>
 <script>
 (async()=>{
-  const showAll = new URLSearchParams(location.search).has('all');
-  const grid=document.getElementById('grid'), empty=document.getElementById('empty');
+  const showAll=new URLSearchParams(location.search).has('all');
+  const grid=document.getElementById('grid'), empty=document.getElementById('empty'), count=document.getElementById('count');
   let works=[];
   try{ const r=await fetch('works/index.json?'+Date.now()); works=(await r.json()).works||[]; }catch(e){}
   works=works.filter(w=>w.status==='approved'||(showAll&&w.status==='pending'))
              .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   if(!works.length){empty.hidden=false;return;}
+  count.textContent=works.length+' WORKS';
+  const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   for(const w of works){
-    const url='works/'+encodeURIComponent(w.slug)+'/';
-    const el=document.createElement('article');
-    el.className='card'+(w.status==='pending'?' pending':'');
+    const base='works/'+encodeURIComponent(w.slug)+'/';
+    const el=document.createElement('article'); el.className='card';
+    const tries=(w.try||[]).map(t=>`<li>${esc(t)}</li>`).join('');
     el.innerHTML=`
-      <div class="thumb"><iframe loading="lazy" src="${url}" title="${w.name}" tabindex="-1"></iframe></div>
+      <div class="shots">
+        <img class="pc" src="${base}thumb.jpg" alt="${esc(w.name)} PC表示" loading="lazy" onerror="this.remove()">
+        <img class="sp" src="${base}thumb_sp.jpg" alt="${esc(w.name)} スマホ表示" loading="lazy" onerror="this.remove()">
+      </div>
       <div class="body">
-        <div class="meta"><b>${w.industry||''}</b> ・ ${w.area||''} ・ ${w.date||''}</div>
-        <h2>${w.name||w.slug}</h2>
-        <p class="ps"><span class="p">${w.problem||''}</span><span class="s">${w.solution||''}</span></p>
-        <div class="btn"><a href="${url}" target="_blank" rel="noopener">サイトを見る</a></div>
+        <div class="meta"><span class="pill ${w.status==='approved'?'ok':'wait'}">${w.status==='approved'?'掲載中':'承認待ち'}</span><b>${esc(w.industry)}</b><span>${esc(w.area)}</span><span>${esc(w.date)}</span>${w.shape?`<span>形: ${esc(w.shape)}</span>`:''}</div>
+        <h2>${esc(w.name||w.slug)}</h2>
+        <dl class="ps"><dt>課題</dt><dd>${esc(w.problem)}</dd><dt>解決</dt><dd>${esc(w.solution)}</dd></dl>
+        ${tries?`<ul class="try">${tries}</ul>`:''}
+        <div class="btns">
+          <a class="btn" href="${base}">体験する</a>
+          ${w.static?`<a class="btn ghost" href="${base}?static=1">動きなしで見る</a>`:''}
+        </div>
       </div>`;
     grid.appendChild(el);
   }

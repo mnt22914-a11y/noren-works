@@ -4,4 +4,5 @@
 
 - 公開: https://mnt22914-a11y.github.io/noren-works/
 - 承認待ちも見る: https://mnt22914-a11y.github.io/noren-works/?all=1
-- 運用ルール: `CLAUDE.md`
+- 運用ルール: `CLAUDE.md`、品質基準: `制作ノート.md`
+- 一覧ページは「誰でも体験できる入口」。各サイトは `?static=1` で動きなし表示。サムネは `python3 tools/thumb.py <slug>`
