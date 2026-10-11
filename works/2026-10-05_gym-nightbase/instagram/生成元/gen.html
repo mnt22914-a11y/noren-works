@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@500;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ノレン Instagram カルーセル テンプレ v2(2026-10-11)。1080×1440、ブランド色 藍×生成×金茶。?n=1〜8 で1枚ずつ表示 */
+:root{--ai:#2B3A67;--ai2:#1F2B50;--kinari:#F6F1E7;--kinari2:rgba(246,241,231,.78);--kin:#B08A3E;--kin2:#D9B979;--line:rgba(246,241,231,.18)}
+html,body{margin:0;width:1080px;height:1440px;overflow:hidden}
+body{background:var(--ai);color:var(--kinari);font-family:"Zen Kaku Gothic New",sans-serif;-webkit-font-smoothing:antialiased}
+.slide{display:none;position:relative;width:1080px;height:1440px;overflow:hidden;background:linear-gradient(180deg,#30406F 0%,var(--ai) 45%,var(--ai2) 100%)}
+.slide.on{display:block}
+.slide::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 560px 460px at 82% 12%,rgba(176,138,62,.22),rgba(176,138,62,0) 70%)}
+.in{position:absolute;left:96px;right:96px;top:0;bottom:0}
+.eyebrow{position:absolute;top:104px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:28px;letter-spacing:.32em;color:var(--kin2)}
+.eyebrow.jp{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:26px;letter-spacing:.14em}
+.right{position:absolute;top:106px;right:0;font-size:22px;color:var(--kinari2);letter-spacing:.06em}
+h1{position:absolute;margin:0;font-family:"Shippori Mincho",serif;font-weight:700;font-size:78px;line-height:1.32;letter-spacing:.04em}
+h1 em{font-style:normal;color:var(--kin2)}
+.body{position:absolute;margin:0;font-size:32px;font-weight:500;line-height:1.95;color:var(--kinari2);letter-spacing:.02em}
+.body b{color:var(--kinari);font-weight:700}
+.logo{position:absolute;left:96px;bottom:96px;font-family:"Shippori Mincho",serif;font-weight:700;font-size:34px;letter-spacing:.14em}
+.pg{position:absolute;right:96px;bottom:100px;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:28px;letter-spacing:.18em;color:var(--kin2)}
+.foot{position:absolute;left:96px;right:96px;bottom:156px;font-size:22px;color:var(--kinari2)}
+/* 吹き出し */
+.bubbles{position:absolute;top:190px;left:0;display:flex;flex-direction:column;gap:26px}
+.bub{display:flex;align-items:flex-start;gap:18px}
+.bub i{flex:0 0 52px;width:52px;height:52px;border-radius:50%;background:rgba(246,241,231,.28);margin-top:6px}
+.bub span{background:var(--kinari);color:var(--ai);font-weight:700;font-size:34px;line-height:1.5;padding:22px 34px;border-radius:30px;border-top-left-radius:8px;letter-spacing:.02em}
+.q{position:absolute;top:104px;left:0}
+.q span{font-size:36px;padding:24px 38px}
+.tag{position:absolute;left:0;bottom:190px;font-family:"Shippori Mincho",serif;font-weight:700;font-size:54px;color:var(--kin2);letter-spacing:.04em}
+.tag::before{content:"→ ";color:var(--kinari)}
+/* 画面 */
+.shot{position:absolute;background:#0D1428;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.shot img{display:block;width:100%}
+.phone{border-radius:48px;border:10px solid var(--kinari)}
+.card{border-radius:18px;border:4px solid var(--kinari)}
+/* 7枚目 */
+.steps{position:absolute;top:360px;left:0;right:0;display:flex;flex-direction:column;gap:22px}
+.step{display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:start;background:rgba(246,241,231,.08);border:1px solid var(--line);border-radius:16px;padding:30px 34px}
+.step b{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:52px;line-height:1;color:var(--kin2)}
+.step div{font-size:32px;font-weight:700;line-height:1.55}
+.step div small{display:block;font-size:24px;font-weight:500;color:var(--kinari2);margin-top:4px}
+/* 8枚目 */
+.btn{position:absolute;left:-4px;height:104px;padding:0 50px;border-radius:999px;background:var(--kin);color:#1A1407;font-weight:700;font-size:34px;display:flex;align-items:center;letter-spacing:.02em}
+.note{position:absolute;font-size:26px;color:var(--kinari2)}
+</style></head><body>
+
+<section class="slide" data-n="1"><div class="in">
+  <div class="eyebrow jp">お店のDMに、毎日届く質問</div>
+  <div class="bubbles">
+    <div class="bub"><i></i><span>夜って、ひとりで行っても<br>怖くないですか？</span></div>
+    <div class="bub"><i></i><span>今って、混んでますか？</span></div>
+    <div class="bub"><i></i><span>月いくらですか？</span></div>
+  </div>
+  <h1 style="bottom:230px;left:0">同じ質問に、<br><em>今日も答えて</em><br><em>いませんか？</em></h1>
+  <div class="logo">ノレン</div><div class="pg">SWIPE →</div>
+</div></section>
+
+<section class="slide" data-n="2"><div class="in">
+  <div class="eyebrow">THINK</div>
+  <h1 style="top:190px;left:0;font-size:68px">その質問は、<br><em>「サイトに答えがない」</em><br>というサインです。</h1>
+  <p class="body" style="top:600px;left:0">わざわざDMをくれるのは、<br>まだ優しいお客さんです。<br><br>その後ろには、<br>答えが見つからずに<br><b>何も言わずに離れた人</b>がいます。</p>
+  <div class="logo">ノレン</div><div class="pg">2 / 8</div>
+</div></section>
+
+<section class="slide" data-n="3"><div class="in">
+  <div class="eyebrow">NIGHT / BASE</div><div class="right">※架空のお店です</div>
+  <div class="shot phone" style="left:206px;top:200px;width:476px"><img src="hero.png" alt=""></div>
+  <div class="logo">ノレン</div><div class="pg">3 / 8</div>
+</div></section>
+
+<section class="slide" data-n="4"><div class="in">
+  <div class="bub q"><i></i><span>夜って、怖くない？</span></div>
+  <div class="shot card" style="left:0;top:270px;width:560px"><img src="safe_text.png" alt=""></div>
+  <div class="tag">数字で答える。</div>
+  <div class="logo">ノレン</div><div class="pg">4 / 8</div>
+</div></section>
+
+<section class="slide" data-n="5"><div class="in">
+  <div class="bub q"><i></i><span>今って、混んでる？</span></div>
+  <div class="shot card" style="left:0;top:270px;width:720px"><img src="live.png" alt=""></div>
+  <div class="shot card" style="left:0;top:470px;width:720px"><img src="crowd.png" alt=""></div>
+  <div class="tag">開いた瞬間に。</div>
+  <div class="logo">ノレン</div><div class="pg">5 / 8</div>
+</div></section>
+
+<section class="slide" data-n="6"><div class="in">
+  <div class="bub q"><i></i><span>月いくら？</span></div>
+  <div class="shot card" style="left:0;top:270px;width:520px"><img src="price_cut.png" alt=""></div>
+  <div class="tag">最初に、3つだけ。</div>
+  <div class="logo">ノレン</div><div class="pg">6 / 8</div>
+</div></section>
+
+<section class="slide" data-n="7"><div class="in">
+  <div class="eyebrow">TRY TODAY</div>
+  <h1 style="top:170px;left:0">今日からできること。</h1>
+  <div class="steps">
+    <div class="step"><b>1</b><div>先月のDMを見返して、<br>よく来た質問を3つ書き出す</div></div>
+    <div class="step"><b>2</b><div>その答えを、サイトやプロフィールの<br>いちばん上に書く</div></div>
+    <div class="step"><b>3</b><div>答えは言葉より数字で書く<small>時間・人数・金額</small></div></div>
+  </div>
+  <p class="body" style="top:1010px;left:0">保存して、手が空いたときに。</p>
+  <div class="logo">ノレン</div><div class="pg">7 / 8</div>
+</div></section>
+
+<section class="slide" data-n="8"><div class="in">
+  <div class="eyebrow">FOR YOUR SHOP</div>
+  <h1 style="top:170px;left:0">あなたのお店の<br>ホームページを、<br><em>無料で</em>作ります。</h1>
+  <p class="body" style="top:540px;left:0">お店によく来る質問を<br>3つ教えてください。<br>それに答えるホームページを作って、<br>お送りします。</p>
+  <div class="btn" style="top:850px">DMで「見本」と送るだけ</div>
+  <div class="note" style="top:980px;left:0">売り込みの連絡はしません。</div>
+  <div class="foot">※ナイトベースは架空のお店の制作例です。写真: Unsplash</div>
+  <div class="logo">ノレン</div><div class="pg">8 / 8</div>
+</div></section>
+
+<script>var n=new URLSearchParams(location.search).get('n')||'1';document.querySelector('.slide[data-n="'+n+'"]').classList.add('on');</script>
+</body></html>
