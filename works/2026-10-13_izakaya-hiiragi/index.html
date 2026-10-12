@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>炭火と燗 ひいらぎ(架空)</title>
 <meta name="description" content="〇〇駅 東口 徒歩3分、裏通りの炭火串焼きと燗酒の店。今夜の席の空きと今夜の黒板をサイトで。カウンター8席・小上がり2卓。※架空のお店の制作例です。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="炭火と燗 ひいらぎ(架空) | 今夜、空いてます。">
+<meta property="og:description" content="「今日、空いてる？」に、サイトが先に答える居酒屋の制作例。今夜の席の空きと日替わりの黒板をトップで。制作: ノレン">
+<meta property="og:image" content="https://mnt22914-a11y.github.io/noren-works/works/2026-10-13_izakaya-hiiragi/thumb.jpg">
+<meta property="og:url" content="https://mnt22914-a11y.github.io/noren-works/works/2026-10-13_izakaya-hiiragi/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#161210">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yuji+Syuku&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
@@ -66,8 +73,10 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 
 /* ヒーロー */
 .hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;isolation:isolate}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,18,16,.45) 0%,rgba(22,18,16,.1) 35%,rgba(22,18,16,.88) 75%,var(--sumi) 100%)}
+.hero picture{position:absolute;inset:0;z-index:-2}
+.hero .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,18,16,.45) 0%,rgba(22,18,16,.2) 35%,rgba(22,18,16,.9) 72%,var(--sumi) 100%)}
+.hero .eyebrow,.hero h1,.hero p{text-shadow:0 2px 26px rgba(22,18,16,.7),0 1px 3px rgba(22,18,16,.5)}
 .hero .wrap{padding:120px 0 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
 .hero h1{font-family:var(--mincho);font-weight:700;font-size:clamp(38px,7.6vw,86px);line-height:1.25;letter-spacing:.04em}
 .hero p{margin-top:18px;color:#D9CFC0;max-width:30em}
@@ -87,6 +96,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .pill[data-s="0"]{--st:#8FD68A}.pill[data-s="1"]{--st:#F2C14E}.pill[data-s="2"]{--st:#E4604F}
 .board .note{margin-top:10px;font-size:11px;color:var(--mute)}
 .board .note a{color:var(--hi);text-decoration:none;border-bottom:1px solid currentColor}
+.board .note button{font:inherit;font-size:11px;color:var(--hi);background:none;border:1px solid rgba(233,138,46,.5);border-radius:999px;padding:2px 10px;cursor:pointer;margin-left:8px}
 
 /* 今夜の席(本編) */
 .tonight .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:96px 0;align-items:center}
@@ -106,7 +116,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .hourly .lab{font-size:12px;color:var(--mute);margin-bottom:8px}
 .hourly .cells{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .hourly .cells div{background:rgba(243,235,220,.06);border-radius:4px;padding:8px 6px;text-align:center;font-size:12px}
-.hourly .cells div b{display:block;font-family:var(--num);font-size:18px;color:var(--hi);letter-spacing:.04em}
+.hourly .cells div b{display:block;font-family:var(--sans);font-size:17px;line-height:1.3;color:var(--hi);font-weight:700}
 .bigboard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:11px;color:var(--mute);gap:10px;flex-wrap:wrap}
 .bigboard .foot button{font:inherit;color:var(--hi);background:none;border:1px solid rgba(233,138,46,.5);border-radius:999px;padding:6px 12px;cursor:pointer}
 .tonight .why{margin-top:28px;display:grid;gap:14px}
@@ -131,6 +141,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .date small{display:block;font-family:var(--num);font-size:12px;letter-spacing:.24em;color:var(--mute);margin-bottom:2px}
 .rail{display:flex;gap:18px;margin-top:70px;overflow-x:auto;padding:0 6px 30px;scroll-snap-type:x proximity;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
+.swipe{display:none;font-size:11px;color:var(--mute);letter-spacing:.14em;margin-top:-8px}
 .tz{width:104px;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;scroll-snap-align:start;padding:40px 10px 16px}
 .tz .v{writing-mode:vertical-rl;font-family:var(--fude);font-size:24px;letter-spacing:.14em;color:var(--ink);line-height:1.15}
 .tz .v small{font-size:14px;color:var(--ink2);margin-top:10px}
@@ -189,6 +200,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .list small{display:block;color:var(--ink2);font-size:12px}
 .list .p{font-family:var(--num);font-size:20px;font-weight:700;color:var(--ink)}
 .list .p::after{content:"円";font-family:var(--sans);font-size:11px;margin-left:2px;color:var(--ink2)}
+.list .p.from::after{content:"円〜"}
 .budget{display:grid;gap:12px;margin-top:24px}
 .plan{background:#fff;border:1px solid var(--line-d);border-radius:6px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;position:relative}
 .plan.pop{border-color:var(--aka)}
@@ -229,6 +241,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .rform label{font-size:12px;color:var(--mute);display:block}
 .rform .box{margin-top:4px;background:rgba(243,235,220,.06);border:1px solid var(--line);border-radius:4px;padding:11px 12px;font-size:14px;color:var(--paper)}
 .rform .full{grid-column:1/-1}
+.rform .box.ph{color:var(--mute)}
 .rform .btn{width:100%;justify-content:center;margin-top:18px}
 .rform p{font-size:12px;color:var(--mute);margin-top:12px}
 
@@ -269,12 +282,15 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
   body{font-size:14px}
   .hero .wrap{grid-template-columns:1fr;gap:26px;padding:110px 0 44px}
   .hero h1{font-size:clamp(38px,11.5vw,56px)}
-  .tonight .wrap,.sumibi .wrap,.menu .wrap,.reserve .wrap,.kokuban .after{grid-template-columns:1fr;gap:36px;padding-top:70px;padding-bottom:70px}
+  .tonight .wrap,.sumibi .wrap,.menu .wrap,.reserve .wrap{grid-template-columns:1fr;gap:36px;padding-top:70px;padding-bottom:70px}
+  .kokuban .after{grid-template-columns:1fr;gap:48px;margin-top:24px}
+  .hero .hero-img{object-position:50% 50%}
   .kokuban .head,.atmos .head{grid-template-columns:1fr;gap:12px}
   .kokuban .wrap{padding:70px 0 80px}
   .rail{margin-top:56px;margin-inline:-16px;padding:0 16px 24px;scroll-padding-inline:16px}
   .atmos .strips{margin-top:56px;margin-inline:-16px;padding:0 16px 24px;scroll-padding-inline:16px}
   .atmos .strip{width:200px}
+  .swipe{display:block}
   .kokuban .after .strip{width:120px}
   .quotes{grid-template-columns:1fr}
   .temps{grid-template-columns:repeat(3,1fr);gap:8px}
@@ -285,7 +301,8 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
   .kan .cnt b{font-size:38px}
   .fact{grid-template-columns:80px 1fr}
   .fact .num{font-size:32px}
-  .hours{display:none}
+  .hours{font-size:11px;letter-spacing:.1em}
+  .hours .lo{display:none}
   .rform .f{grid-template-columns:1fr}
   .bar p{display:none}
   .bar .wrap{justify-content:stretch}
@@ -303,12 +320,12 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
 <header>
   <div class="wrap">
     <a class="logo" href="#"><i></i>ひいらぎ</a>
-    <div class="hours">17:00 – 24:00 / L.O. 23:30</div>
+    <div class="hours">17:00 – 24:00<span class="lo"> / L.O. 23:30</span></div>
   </div>
 </header>
 
 <section class="hero">
-  <img src="img/hero.jpg" alt="夜の裏通りから見た、白い割烹着の店主が立つカウンターの店" fetchpriority="high">
+  <picture><source media="(max-width:860px)" srcset="img/hero_sp.jpg" width="1400" height="1400"><img class="hero-img" src="img/hero.jpg" width="1400" height="2100" alt="温かいランプの下、カウンターの奥で仕込みをする店主" fetchpriority="high"></picture>
   <div class="wrap">
     <div>
       <div class="eyebrow">〇〇駅 東口 徒歩3分・裏通り</div>
@@ -324,7 +341,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
       <div class="t"><span>Tonight</span><b id="nowTime">--:--</b></div>
       <div class="row"><span>カウンター<small>8席</small></span><span class="pill" data-s="0" id="pCounter"><i>○</i><span>空席あり</span></span></div>
       <div class="row"><span>小上がり<small>2卓</small></span><span class="pill" data-s="0" id="pZashiki"><i>○</i><span>空席あり</span></span></div>
-      <p class="note"><span id="upd">更新 --:--</span>・スタッフがボタンで切り替え。<a href="#tonight">詳しく</a></p>
+      <p class="note"><span id="upd">更新 --:--</span>・スタッフがボタンで切り替え。<a href="#tonight">詳しく</a><button type="button" id="demo2">デモで切り替える</button></p>
     </div>
   </div>
 </section>
@@ -387,11 +404,12 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
       <figure class="strip tz"><div class="v">とろ湯葉<small>わさび醤油</small></div><div class="p">580</div></figure>
       <figure class="strip tz"><div class="v">自家製 ぬか漬け<small>五種</small></div><div class="p">480</div></figure>
     </div>
+    <p class="swipe" aria-hidden="true">横にスワイプ →</p>
     <div class="after">
       <p class="reveal">短冊は、店の壁に下がっている本物と同じ順番。サイトを見てから来た人が、店で同じ札を見つけて「あ、これだ」となるように。</p>
       <div class="pics">
-        <figure class="strip"><div class="ph"><img src="img/smoke.jpg" alt="煙の立つ焼き台の上で焼かれる串" loading="lazy"></div><figcaption>焼き台</figcaption></figure>
-        <figure class="strip"><div class="ph"><img src="img/table.jpg" alt="串焼きと飲み物が並ぶ木のテーブル" loading="lazy"></div><figcaption>まずは一本</figcaption></figure>
+        <figure class="strip"><div class="ph"><img src="img/smoke.jpg" width="1052" height="1400" alt="煙の立つ焼き台の上で焼かれる串" loading="lazy"></div><figcaption>焼き台</figcaption></figure>
+        <figure class="strip"><div class="ph"><img src="img/table.jpg" width="1400" height="933" alt="串焼きと飲み物が並ぶ木のテーブル" loading="lazy"></div><figcaption>まずは一本</figcaption></figure>
       </div>
     </div>
   </div>
@@ -400,7 +418,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
 <section class="sumibi light">
   <div class="wrap">
     <div class="photo reveal">
-      <figure class="strip"><div class="ph"><img src="img/grill.jpg" alt="赤く熾った炭の上で焼かれる肉" loading="lazy"></div><figcaption>備長炭</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/grill.jpg" width="933" height="1400" alt="赤く熾った炭の上で焼かれる肉" loading="lazy"></div><figcaption>備長炭</figcaption></figure>
       <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
     </div>
     <div class="reveal">
@@ -417,7 +435,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
 </section>
 
 <section class="kan">
-  <img src="img/sake.jpg" alt="木のカウンターに置かれた徳利と二つの猪口" loading="lazy">
+  <img src="img/sake.jpg" width="1400" height="2100" alt="木のカウンターに並ぶ、形の違う猪口" loading="lazy">
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Kan</div>
@@ -449,7 +467,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
         <li><div><h3>つくね 月見</h3><small>黄身を絡めて</small></div><span class="p">320</span></li>
         <li><div><h3>炭火焼き 厚揚げ</h3><small>生姜醤油</small></div><span class="p">420</span></li>
         <li><div><h3>お茶漬け(鯛・梅)</h3><small>締めに</small></div><span class="p">580</span></li>
-        <li><div><h3>燗酒 一合</h3><small>温度は3つから</small></div><span class="p">780〜</span></li>
+        <li><div><h3>燗酒 一合</h3><small>温度は3つから</small></div><span class="p from">780</span></li>
       </ul>
     </div>
     <div class="reveal">
@@ -475,10 +493,11 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
       <p class="lead" style="margin-top:0">大きな店ではありません。その代わり、焼き手の手元が見える距離で。小上がりは靴を脱いで、少し長く。</p>
     </div>
     <div class="strips">
-      <figure class="strip"><div class="ph"><img src="img/chef.jpg" alt="小窓越しに見える厨房で料理をする店主" loading="lazy"></div><figcaption>焼き場の目の前</figcaption></figure>
-      <figure class="strip"><div class="ph"><img src="img/pour.jpg" alt="徳利から猪口に酒を注ぐ手元" loading="lazy"></div><figcaption>燗は徳利で</figcaption></figure>
-      <figure class="strip"><div class="ph"><img src="img/skewers.jpg" alt="焼き台に並ぶたくさんの串" loading="lazy"></div><figcaption>仕込みは夕方から</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/chef.jpg" width="846" height="1400" alt="小窓越しに見える厨房で料理をする店主" loading="lazy"></div><figcaption>焼き場の目の前</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/pour.jpg" width="1400" height="933" alt="徳利から猪口に酒を注ぐ手元" loading="lazy"></div><figcaption>燗は徳利で</figcaption></figure>
+      <figure class="strip"><div class="ph"><img src="img/skewers.jpg" width="1400" height="933" alt="焼き台に並ぶたくさんの串" loading="lazy"></div><figcaption>仕込みは夕方から</figcaption></figure>
     </div>
+    <p class="swipe" aria-hidden="true">横にスワイプ →</p>
   </div>
 </section>
 
@@ -514,7 +533,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
         <div><label>席</label><div class="box">カウンター</div></div>
         <div><label>時間</label><div class="box">19:30</div></div>
         <div><label>人数</label><div class="box">2名</div></div>
-        <div><label>お名前</label><div class="box">　</div></div>
+        <div><label>お名前</label><div class="box ph">例) 山田</div></div>
       </div>
       <a class="btn" href="#" id="formBtn">この内容で席を確保する
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -524,7 +543,7 @@ footer b{font-family:var(--mincho);color:var(--paper);letter-spacing:.2em;font-s
 </section>
 
 <section class="access" id="access">
-  <img src="img/skewers.jpg" alt="" loading="lazy">
+  <img src="img/skewers.jpg" width="1400" height="933" alt="" loading="lazy">
   <div class="wrap">
     <div class="card reveal">
       <div class="eyebrow">Access</div>
@@ -592,7 +611,9 @@ function paint(){
 }
 scene=sceneByHour(new Date().getHours());
 paint(); setInterval(paint,60000);
-document.getElementById("demo").addEventListener("click",()=>{scene=(scene+1)%SCENES.length;fakeUpd=fmt(new Date());paint()});
+const nextScene=()=>{scene=(scene+1)%SCENES.length;fakeUpd=fmt(new Date());paint()};
+document.getElementById("demo").addEventListener("click",nextScene);
+document.getElementById("demo2").addEventListener("click",nextScene);
 
 /* ===== 燗の温度 ===== */
 const PICK=[
@@ -639,12 +660,12 @@ function startMotion(){
       .to(intro,{yPercent:-100,duration:.9,ease:"power4.inOut"},"+=.2")
       .set(intro,{display:"none"});
   }
-  tl.from(".hero>img",{scale:1.2,duration:2.2,ease:"power3.out"},seen?0:"-=.9")
+  tl.from(".hero .hero-img",{scale:1.2,duration:2.2,ease:"power3.out"},seen?0:"-=.9")
     .from(heroChars,{yPercent:120,opacity:0,rotate:4,duration:.9,stagger:.04,ease:"power4.out"},"-=1.9")
     .from(".hero .eyebrow, .hero p, .hero .cta, header",{y:22,opacity:0,duration:.8,stagger:.08,ease:"power3.out"},"-=.9")
     .from(".hero .board",{y:30,opacity:0,duration:.9,ease:"power3.out"},"-=.7");
   /* ヒーロー: スクロールで奥へ */
-  gsap.to(".hero>img",{yPercent:16,scale:1.06,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+  gsap.to(".hero .hero-img",{yPercent:16,scale:1.06,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
   gsap.to(".hero .wrap",{yPercent:-24,opacity:0,ease:"none",scrollTrigger:{trigger:".hero",start:"45% top",end:"bottom top",scrub:true}});
   /* 見出し: 1文字ずつ / 英字は字間が詰まる */
   document.querySelectorAll("h2.split").forEach(h=>{const chs=splitChars(h);
