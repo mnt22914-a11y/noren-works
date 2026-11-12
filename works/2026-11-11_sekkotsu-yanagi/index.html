@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>やなぎ通り接骨院(架空)</title>
+<meta name="description" content="〇〇町やなぎ通りの接骨院。捻挫・打撲などのけがは保険で、肩・首・腰は自費で施術しています。予約なしでも受付。駐車場6台。※架空のお店の制作例です。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="やなぎ通り接骨院(架空)">
+<meta property="og:description" content="〇〇町やなぎ通りの接骨院。予約なしでも受付。駐車場6台。※架空のお店の制作例です。">
+<meta property="og:image" content="https://mnt22914-a11y.github.io/noren-works/works/2026-11-11_sekkotsu-yanagi/thumb.jpg">
+<meta property="og:url" content="https://mnt22914-a11y.github.io/noren-works/works/2026-11-11_sekkotsu-yanagi/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --paper:#F6F8F3; --green:#DDEBDD; --green2:#5E8B6A; --green3:#3F6B4C;
+  --wood:#C9A77C; --wood2:#8A6A45; --ink:#2B2F2C; --mute:#5F665F; --line:#E2E7DF;
+  --sans:"Zen Kaku Gothic New",sans-serif; --maru:"Zen Maru Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.85;padding-bottom:92px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(960px,100% - 32px);margin-inline:auto}
+h2{font-family:var(--maru);font-weight:700;font-size:clamp(23px,3.6vw,30px);line-height:1.5;letter-spacing:.03em}
+h2::after{content:"";display:block;width:44px;height:3px;background:var(--wood);border-radius:2px;margin-top:12px}
+h3{font-family:var(--maru);font-weight:700;font-size:19px;line-height:1.6}
+section{padding:56px 0}
+.alt{background:var(--paper)}
+.small{font-size:15px;color:var(--mute)}
+.tel{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:var(--maru);font-weight:700;font-size:19px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:12px;height:22px;border-radius:12px 0 12px 0;background:var(--green2);display:inline-block;transform:rotate(18deg)}
+.htel{font-size:15px;text-decoration:none;color:var(--green3);font-weight:700}
+
+/* ヒーロー */
+.hero{padding:0 0 40px}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;max-height:560px}
+.hero-body{position:relative;background:#fff;border-radius:14px;margin:-48px 0 0;padding:26px 22px 24px;box-shadow:0 6px 24px rgba(40,60,45,.08)}
+.hero h1{font-family:var(--maru);font-weight:700;font-size:clamp(30px,6vw,44px);line-height:1.35;letter-spacing:.04em}
+.hero .what{margin-top:10px;font-size:17px}
+.today{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px}
+.today p{display:contents}
+.today b{font-weight:700;white-space:nowrap}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 24px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;background:var(--green3);color:#fff;border:2px solid var(--green3)}
+.btn.sub{background:#fff;color:var(--green3)}
+.btns .btn{flex:1 1 130px;padding:0 14px;font-size:17px}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* お知らせ */
+.news{padding:28px 0}
+.news ul{list-style:none;border:1px solid var(--line);border-left:5px solid var(--wood);border-radius:8px;padding:16px 18px;display:grid;gap:8px;background:#fff}
+.news li{display:grid;gap:0;line-height:1.7}
+.news li+li{padding-top:8px;border-top:1px dashed var(--line)}
+.news time{color:var(--mute);font-size:14px}
+.news h2{font-size:19px;margin-bottom:12px}
+.news h2::after{display:none}
+
+/* 受付時間 */
+.hours{width:100%;border-collapse:collapse;margin-top:24px;background:#fff;font-size:17px}
+.hours th,.hours td{border-bottom:1px solid var(--line);padding:14px 10px;text-align:left;vertical-align:top}
+.hours th{font-weight:700;width:34%;white-space:nowrap}
+.hours tr.off td{color:var(--mute)}
+.hours-note{margin-top:16px;display:grid;gap:6px}
+
+/* 料金 */
+.price-group{margin-top:28px}
+.price-group h3{display:flex;align-items:center;gap:10px}
+.tag{font-family:var(--sans);font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--green);color:var(--green3)}
+.tag.own{background:#F1E7D8;color:var(--wood2)}
+.price-list{list-style:none;margin-top:12px;border-top:1px solid var(--line)}
+.price-list li{display:flex;justify-content:space-between;gap:12px;padding:14px 2px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.price-list li span:last-child{font-weight:700;font-variant-numeric:tabular-nums;margin-left:auto}
+.price-group p{margin-top:10px}
+
+/* 初めての方へ */
+.qa{margin-top:24px;display:grid;gap:14px}
+.qa div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 18px 16px}
+.qa dt{font-weight:700;display:flex;gap:10px}
+.qa dt::before{content:"Q";font-family:var(--maru);color:var(--green2);font-weight:700}
+.qa dd{margin-top:8px;padding-left:24px}
+.flow{list-style:none;margin-top:24px;display:grid;gap:10px;counter-reset:f}
+.flow li{display:flex;gap:14px;align-items:baseline;background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--line);counter-increment:f}
+.flow li::before{content:counter(f);flex:none;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--green3);font-weight:700;display:grid;place-items:center;font-size:15px;transform:translateY(-2px)}
+.bring{margin-top:20px;padding:16px 18px;border-radius:10px;background:#FBF6EE;border:1px solid #EFE2CD}
+
+/* 院長から */
+.greet{display:grid;gap:24px;margin-top:24px}
+.greet img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.greet p+p{margin-top:12px}
+.sign{text-align:right;color:var(--mute);font-size:15px}
+
+/* 写真 */
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.photos figure{margin:0}
+.photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+.photos figcaption{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.6}
+
+/* アクセス */
+.access{display:grid;gap:24px;margin-top:24px}
+.access img{border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.access dl{display:grid;gap:12px}
+.access dl div{border-bottom:1px solid var(--line);padding-bottom:12px}
+.access dt{font-weight:700;font-size:15px;color:var(--green3)}
+.route{list-style:none;display:grid;gap:6px;margin-top:4px}
+.route li::before{content:"・"}
+
+/* 電話 */
+.call{text-align:center}
+.call h2::after{margin-inline:auto}
+.call .big{font-family:var(--maru);font-weight:700;font-size:clamp(30px,8vw,40px);text-decoration:none;color:var(--green3);display:inline-block;margin-top:16px;letter-spacing:.04em}
+.call p{margin-top:8px}
+
+/* フッター */
+footer{background:var(--paper);border-top:1px solid var(--line);padding:32px 0 28px;font-size:14px;color:var(--mute);line-height:1.8}
+footer .name{font-family:var(--maru);font-weight:700;color:var(--ink);font-size:17px}
+footer .note{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+footer a{color:var(--green3)}
+
+/* 画面下の固定バー */
+.fixed{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(40,60,45,.06)}
+.fixed .wrap{display:flex;align-items:center;gap:12px;padding:10px 0}
+.fixed p{font-size:13px;line-height:1.5;color:var(--mute);flex:1;min-width:0}
+.fixed p b{display:block;color:var(--ink);font-size:15px}
+.fixed .btn{min-height:54px;padding:0 20px;font-size:17px;flex:none}
+
+/* フェード(JS が動くときだけ) */
+.js .fade{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.js .fade.in{opacity:1;transform:none}
+.static .fade{opacity:1!important;transform:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){.js .fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (min-width:760px){
+  section{padding:80px 0}
+  .hero-photo img{aspect-ratio:16/7;max-height:440px}
+  .hero-body{max-width:640px;margin:-140px 0 0 0;padding:30px 36px 28px}
+  .greet,.access{grid-template-columns:1fr 1fr;align-items:start}
+  .photos{grid-template-columns:repeat(4,1fr)}
+  .qa{grid-template-columns:1fr 1fr}
+  .fixed .wrap{justify-content:flex-end}
+  .fixed p{flex:none;text-align:right}
+}
+</style>
+<script>
+(function(){var d=document.documentElement,s=/[?&]static=1/.test(location.search);d.classList.add(s?'static':'js');})();
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><i aria-hidden="true"></i>やなぎ通り接骨院</a>
+    <a class="htel tel" href="tel:000-0000-0000">電話 000-0000-0000</a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="hero-photo"><img src="img/1_gaikan.jpg" alt="やなぎ通り接骨院の外観。白い建物と木の引き戸、前に駐車場" width="1600" height="1194" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hero-body fade">
+      <h1>やなぎ通り接骨院</h1>
+      <p class="what">〇〇町のやなぎ通り沿いにある接骨院です。捻挫や打撲などのけがは保険で、肩・首・腰のつらさは自費で施術しています。</p>
+      <div class="today">
+        <p><b>月・火・水・金</b><span>9:00〜12:00<br>15:00〜20:00</span></p>
+        <p><b>木・土</b><span>9:00〜13:00</span></p>
+        <p><b>日・祝</b><span>休み</span></p>
+      </div>
+      <div class="btns">
+        <a class="btn" href="tel:000-0000-0000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>電話する</a>
+        <a class="btn sub" href="#first">初めての方へ</a>
+      </div>
+      <p class="small" style="margin-top:12px">予約なしでも受け付けています。<span style="white-space:nowrap">駐車場 6 台。</span></p>
+    </div>
+  </div>
+</div>
+
+<section class="news" aria-labelledby="news-h">
+  <div class="wrap">
+    <h2 id="news-h">お知らせ</h2>
+    <ul>
+      <li><time>11月23日</time><span>勤労感謝の日(月・祝)はお休みです。</span></li>
+      <li><time>年末年始</time><span>12月29日(火)〜1月3日(日)はお休みです。</span></li>
+      <li><time>11月から</time><span>QR コード決済が使えるようになりました。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="hours" class="alt">
+  <div class="wrap fade">
+    <h2>受付時間</h2>
+    <table class="hours">
+      <tr><th scope="row">月・火・水・金</th><td>9:00〜12:00<br>15:00〜20:00</td></tr>
+      <tr><th scope="row">木・土</th><td>9:00〜13:00<br><span class="small">午後はお休み</span></td></tr>
+      <tr class="off"><th scope="row">日・祝</th><td>お休み</td></tr>
+    </table>
+    <div class="hours-note">
+      <p>予約なしでも受け付けています。電話で予約した方が先になります。</p>
+      <p>夕方 17 時からは部活帰りの学生さんで混みます。待ちたくない方は、電話で時間を決めてから来てください。</p>
+      <p class="small">施術中は電話に出られないことがあります。少し時間をおいて、もう一度かけてください。</p>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap fade">
+    <h2>料金</h2>
+    <p class="small" style="margin-top:12px">税込・目安です。</p>
+
+    <div class="price-group">
+      <h3><span class="tag">保険</span>けがの施術</h3>
+      <p>骨折・脱臼・打撲・捻挫・挫傷(肉離れ)など、いつ・どこで・どうしたかがはっきりしているけがは保険が使えます。</p>
+      <ul class="price-list">
+        <li><span>初回</span><span>1,500 円前後</span></li>
+        <li><span>2 回目から</span><span>500〜800 円前後</span></li>
+      </ul>
+      <p class="small">3 割負担のときの目安です。負担の割合や、けがをした場所の数で変わります。骨折・脱臼は、応急の手当てのあとは医師の同意が必要です。</p>
+    </div>
+
+    <div class="price-group">
+      <h3><span class="tag own">自費</span>肩・首・腰のつらさ</h3>
+      <p>長く続く肩こりや腰の重さ、疲れは保険が使えないため、自費になります。</p>
+      <ul class="price-list">
+        <li><span>肩・首の手技 20 分</span><span>3,300 円</span></li>
+        <li><span>姿勢と骨盤の調整 30 分</span><span>4,400 円</span></li>
+        <li><span>初回のみ 問診・検査料</span><span>1,100 円</span></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px">お支払いは現金と QR コード決済です。どちらになるか分からないときは、来たときに説明します。</p>
+  </div>
+</section>
+
+<section id="first" class="alt">
+  <div class="wrap">
+    <div class="fade">
+      <h2>初めての方へ</h2>
+      <p style="margin-top:16px">電話でよく聞かれることを、先にまとめました。</p>
+    </div>
+    <dl class="qa">
+      <div class="fade"><dt>保険は使えますか</dt><dd>けがなら使えます。慢性の肩こりや疲れは保険の対象外で、自費になります。どちらか分からないときは、電話で聞いてください。</dd></div>
+      <div class="fade"><dt>予約しないと行けませんか</dt><dd>予約なしでも大丈夫です。夕方 17 時からは混むので、待ちたくない方は電話で予約をしてください。</dd></div>
+      <div class="fade"><dt>何を着ていけばいいですか</dt><dd>動きやすい服で来てください。短パンと T シャツの貸し出しもあります。</dd></div>
+      <div class="fade"><dt>駐車場はありますか</dt><dd>院の前に 6 台あります。満車のときは受付に声をかけてください。</dd></div>
+      <div class="fade"><dt>何回通えばいいですか</dt><dd>けがの具合で変わります。初めての日に、通う回数と間隔の目安をお伝えします。</dd></div>
+    </dl>
+
+    <div class="fade" style="margin-top:44px">
+      <h3>来てからの流れ</h3>
+      <ol class="flow">
+        <li>受付で問診票を書きます(5 分ほど)</li>
+        <li>痛むところと、どう動かすと痛いかを確かめます</li>
+        <li>施術します</li>
+        <li>次に来る目安を一緒に決めます</li>
+      </ol>
+      <p class="bring"><b>持ってくるもの:</b>保険を使う方は、マイナ保険証か資格確認書。お薬手帳があれば一緒にお持ちください。</p>
+    </div>
+  </div>
+</section>
+
+<section id="greet">
+  <div class="wrap">
+    <h2 class="fade">院長から</h2>
+    <div class="greet">
+      <img class="fade" src="img/4_kata.jpg" alt="タオルの上から肩に手をあてて施術しているところ" width="1600" height="1194" loading="lazy">
+      <div class="fade">
+        <p>〇〇町で 12 年やっています。</p>
+        <p>痛いところは人それぞれなので、最初によく話を聞くようにしています。分からないことは何でも聞いてください。</p>
+        <p class="sign">院長(柔道整復師)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside" class="alt">
+  <div class="wrap">
+    <h2 class="fade">院の中</h2>
+    <div class="photos">
+      <figure class="fade"><img src="img/3_genkan.jpg" alt="玄関と受付。スリッパが並び、横に長いすがある" width="1600" height="1194" loading="lazy"><figcaption>玄関と受付。靴を脱いで上がります</figcaption></figure>
+      <figure class="fade"><img src="img/2_sejutsu.jpg" alt="施術用のベッドが4台並ぶ部屋。カーテンで仕切れる" width="1600" height="1194" loading="lazy"><figcaption>ベッドは 4 台。カーテンで仕切れます</figcaption></figure>
+      <figure class="fade"><img src="img/5_ashi.jpg" alt="足首にテーピングをしているところ" width="1158" height="1194" loading="lazy"><figcaption>部活のけがも見ています</figcaption></figure>
+      <figure class="fade"><img src="img/6_kigae.jpg" alt="棚にたたんだTシャツと短パン、横に着替え用のカーテン" width="1600" height="1194" loading="lazy"><figcaption>着替えの貸し出しと、着替える場所</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <h2 class="fade">場所と駐車場</h2>
+    <div class="access">
+      <img class="fade" src="img/7_michi.jpg" alt="柳の並木がある住宅街の道。右手に白い建物と駐車場" width="1600" height="1194" loading="lazy">
+      <dl class="fade">
+        <div><dt>住所</dt><dd>〇〇市〇〇町1-2-3(やなぎ通り沿い)</dd></div>
+        <div><dt>道順</dt><dd><ul class="route"><li>〇〇小学校の前の信号を、やなぎ通りへ入ります</li><li>柳の並木を 200m ほど進んだ右手、白い建物です</li></ul></dd></div>
+        <div><dt>駐車場</dt><dd>院の前に 6 台。満車のときは受付に声をかけてください</dd></div>
+        <div><dt>自転車</dt><dd>入口の横に止められます</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="call" class="call alt">
+  <div class="wrap fade">
+    <h2>予約・問い合わせは電話で</h2>
+    <a class="big tel" href="tel:000-0000-0000">000-0000-0000</a>
+    <p>受付時間内にかけてください。</p>
+    <p class="small">施術中で出られないときは、少し時間をおいてもう一度お願いします。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="name">やなぎ通り接骨院</p>
+    <p>〇〇市〇〇町1-2-3 / 電話 000-0000-0000</p>
+    <p>月・火・水・金 9:00〜12:00 / 15:00〜20:00、木・土 9:00〜13:00、日・祝 休み</p>
+    <div class="note">
+      <p>※このサイトは架空のお店の制作例です。制作: ノレン</p>
+      <p>Photos: AI 生成(Higgsfield)</p>
+      <p style="margin-top:10px"><a href="../../">← ノレンの制作例一覧へ</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="fixed">
+  <div class="wrap">
+    <p><b>予約なしでも受付</b>木・土は午後休み、日・祝休み</p>
+    <a class="btn" href="tel:000-0000-0000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>電話する</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var d=document.documentElement;
+  if(!d.classList.contains('js'))return;
+  var els=document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
