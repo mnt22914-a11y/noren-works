@@ -2,146 +2,164 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>やなぎ通り接骨院(架空)</title>
-<meta name="description" content="〇〇町やなぎ通りの接骨院。捻挫・打撲などのけがは保険で、肩・首・腰は自費で施術しています。予約なしでも受付。駐車場6台。※架空のお店の制作例です。">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>やなぎ通り接骨院(架空)｜〇〇町の接骨院・予約なしで受付・駐車場6台</title>
+<meta name="description" content="〇〇町やなぎ通りの接骨院。捻挫や打撲などのけがは健康保険で、肩・首・腰のつらさは自費(20分3,300円から)。予約なしでも受付、駐車場6台。※架空のお店の制作例です。">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="ノレンの制作例">
 <meta property="og:title" content="やなぎ通り接骨院(架空)">
-<meta property="og:description" content="〇〇町やなぎ通りの接骨院。予約なしでも受付。駐車場6台。※架空のお店の制作例です。">
+<meta property="og:description" content="〇〇町やなぎ通りの接骨院。予約なしでも受付、駐車場6台。※架空のお店の制作例です。">
 <meta property="og:image" content="https://mnt22914-a11y.github.io/noren-works/works/2026-11-11_sekkotsu-yanagi/thumb.jpg">
 <meta property="og:url" content="https://mnt22914-a11y.github.io/noren-works/works/2026-11-11_sekkotsu-yanagi/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/il_frog.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 <style>
+/* 色はすべて変数で。文字に使う色は背景と 4.5:1 以上(UIUXスキル表 #31) */
 :root{
-  --bg:#FBF6EE; --card:#FFFDF9; --beige:#F4E7D5; --beige2:#EFE3D0;
-  --orange:#E8762D; --orange2:#C95F1C; --brown:#4A3426; --mute:#7A6656; --green:#7BA84B; --green2:#5C8A33;
-  --line:#E9DCC8;
+  --bg:#FBF6EE; --card:#FFFDF9; --beige:#F4E7D5; --beige2:#EFE3D0; --cream:#FDF0E2;
+  --accent:#E8762D;            /* 飾りだけ(線・円の背景)。文字には使わない */
+  --act:#B5521A; --act-dark:#8E3F12;  /* ボタン・強調の文字(白文字 5.0:1、生成り地 4.7:1) */
+  --brown:#4A3426; --mute:#6B5848;
+  --ins:#3E6820; --ins-bg:#E3EFD5; --own:#A84C17; --own-bg:#FBE1CC;
+  --green:#7BA84B; --line:#E9DCC8;
   --maru:"Zen Maru Gothic",sans-serif; --kiwi:"Kiwi Maru",serif;
+  --head:72px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--maru);font-weight:500;background:var(--bg);color:var(--brown);font-size:17px;line-height:1.85;padding-bottom:92px;overflow-x:clip;-webkit-font-smoothing:antialiased}
+html{scroll-padding-top:calc(var(--head) + 12px);scroll-padding-bottom:96px}
+body{font-family:var(--maru);font-weight:500;background:var(--bg);color:var(--brown);font-size:17px;line-height:1.75;letter-spacing:.02em;padding-bottom:calc(84px + env(safe-area-inset-bottom));overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
+:focus-visible{outline:3px solid var(--act);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
 .small{font-size:15px;color:var(--mute)}
-.em{color:var(--orange)}
-section{padding:64px 0}
+.em{color:var(--act)}
+section{padding:60px 0}
+.alt{background:var(--card)}
+.read{max-width:40em}
 
 /* 見出し */
-.ttl{font-family:var(--kiwi);font-weight:500;font-size:clamp(25px,4vw,34px);line-height:1.5;text-align:center;letter-spacing:.04em}
-.ttl small{display:block;font-family:var(--maru);font-size:15px;color:var(--mute);letter-spacing:.02em;margin-top:6px}
-.slash{font-family:var(--kiwi);font-weight:500;text-align:center;font-size:clamp(21px,3.4vw,28px);letter-spacing:.06em}
-.slash::before{content:"\\";margin-right:.5em;color:var(--orange)}
-.slash::after{content:"/";margin-left:.5em;color:var(--orange)}
+.ttl{font-family:var(--kiwi);font-weight:500;font-size:clamp(26px,4vw,34px);line-height:1.45;text-align:center;letter-spacing:.04em}
+.ttl small{display:block;font-family:var(--maru);font-size:15px;color:var(--mute);letter-spacing:.02em;margin-top:6px;line-height:1.6}
+.slash{font-family:var(--kiwi);font-weight:500;text-align:center;font-size:clamp(22px,3.4vw,28px);line-height:1.45;letter-spacing:.06em}
+.slash::before{content:"\\";margin-right:.5em;color:var(--accent)}
+.slash::after{content:"/";margin-left:.5em;color:var(--accent)}
+.sub{font-family:var(--kiwi);font-weight:500;font-size:22px;line-height:1.45;margin-top:44px;text-align:center}
 
 /* ヘッダー */
-header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.96);backdrop-filter:blur(6px)}
-header .wrap{display:flex;align-items:center;gap:16px;height:72px}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}
+header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.97);border-bottom:1px solid transparent}
+header .wrap{display:flex;align-items:center;gap:16px;height:var(--head)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none;min-height:44px}
 .logo img{width:42px;height:42px}
 .logo span{display:block;line-height:1.2}
 .logo small{display:block;font-size:12px;color:var(--mute);letter-spacing:.1em}
 .logo b{display:block;font-family:var(--kiwi);font-weight:500;font-size:18px;letter-spacing:.05em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'%3E%3Cpath d='M2 5 Q50 1 100 4 T198 3' fill='none' stroke='%237BA84B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") left bottom/100% 6px no-repeat;padding-bottom:5px}
-nav{display:none;gap:26px;margin-left:auto;font-size:15px}
-nav a{text-decoration:none}
-nav a:hover{color:var(--orange)}
-.hcall{margin-left:auto;display:flex;align-items:center;gap:5px;text-decoration:none;background:var(--orange);color:#fff;border-radius:999px;padding:8px 13px;font-size:14px;font-weight:700;flex:none}
-.hcall svg{width:17px;height:17px}
+.gnav{display:none;margin-left:auto;font-size:15px}
+.gnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;border-radius:8px}
+.gnav a:hover{color:var(--act);text-decoration:underline}
 .hinfo{display:none}
+.hcall{margin-left:auto;display:inline-flex;align-items:center;gap:6px;min-height:44px;text-decoration:none;background:var(--act);color:#fff;border-radius:999px;padding:0 16px;font-size:15px;font-weight:700;flex:none}
+.hcall svg{width:18px;height:18px}
+
+/* ボタンの共通(塗り・44px 以上・押した感じ) */
+.btn,.hcall{transition:transform .1s ease,background-color .15s ease}
+.btn:active,.hcall:active{transform:scale(.97)}
+.btn:hover,.hcall:hover{background:var(--act-dark)}
 
 /* ヒーロー */
 .hero{position:relative;padding:8px 0 0;overflow:hidden}
-.hero-grid{display:grid;gap:20px}
+.hero-grid{display:grid;gap:18px}
 .hero-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
 .hero-copy{position:relative;z-index:2;padding:4px 4px 0}
-.hero h1{font-family:var(--kiwi);font-weight:500;font-size:clamp(31px,8.4vw,58px);line-height:1.5;letter-spacing:.04em}
+.hero .kind{display:inline-block;font-size:15px;font-weight:700;color:var(--mute);letter-spacing:.06em;margin-bottom:6px}
+.hero h1{font-family:var(--kiwi);font-weight:500;font-size:clamp(30px,8.2vw,56px);line-height:1.45;letter-spacing:.04em}
 .hero h1 .em{position:relative;display:inline-block;z-index:0}
 .hero h1 .em::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.32em;background:#F7C99B;border-radius:99px;z-index:-1;opacity:.75}
-.hero .lead{margin-top:16px;font-size:17px}
-.hero .open{margin-top:14px;display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:6px 16px;font-size:15px}
-.hero .open i{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
-.town{width:100%;max-width:560px;margin-top:18px}
-.wave{display:block;width:100%;height:46px;margin-top:-30px;position:relative;z-index:1}
+.hero .lead{margin-top:14px}
+.badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badges li{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:5px 14px;font-size:15px;line-height:1.5}
+.badges i{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
+.town{display:none;width:100%;max-width:520px;margin-top:22px}
+.wave{display:block;width:100%;height:40px;margin-top:-26px;position:relative;z-index:1}
+
+/* ページ内の目次(スマホでも見える。#61〜63) */
+.jump{background:var(--card);padding:6px 0 0}
+.jump ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.jump a{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:48px;padding:0 16px;background:var(--bg);border:1.5px solid var(--line);border-radius:14px;text-decoration:none;font-weight:700}
+.jump a::after{content:"";width:8px;height:8px;border-right:2px solid var(--act);border-bottom:2px solid var(--act);transform:rotate(45deg) translate(-2px,-2px);flex:none}
+.jump a:hover{border-color:var(--act)}
+
+/* お知らせ(日付つき。#114) */
+.news{background:var(--card);padding:16px 0 0}
+.news .box{display:flex;gap:12px;align-items:flex-start;background:var(--cream);border-radius:16px;padding:12px 16px;font-size:15px;line-height:1.6}
+.news b{flex:none;color:var(--act);font-weight:700}
+.news time{display:block;color:var(--mute);font-size:13px}
 
 /* 悩み */
-.pains{background:var(--card);padding-top:40px}
-.pain-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px;margin-top:30px}
+.pains{background:var(--card);padding-top:48px}
+.pain-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:20px 12px;margin-top:28px}
 .pain-list li{text-align:center}
-.pain-list .circle{aspect-ratio:1/1;border-radius:50%;background:var(--beige);display:grid;place-items:center;padding:9%;margin-inline:auto;max-width:136px}
+.pain-list .circle{aspect-ratio:1/1;border-radius:50%;background:var(--beige);display:grid;place-items:center;padding:9%;margin-inline:auto;max-width:132px}
 .pain-list li:last-child{grid-column:1/-1}
 .pain-list img{width:100%;height:100%;object-fit:contain}
 .pain-list b{display:block;margin-top:10px;font-size:17px;line-height:1.5}
-.tag{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;padding:1px 12px;border-radius:999px}
-.tag.ins{background:#E3EFD5;color:var(--green2)}
-.tag.own{background:#FBE1CC;color:var(--orange2)}
+.tag{display:inline-block;margin-top:6px;font-size:14px;font-weight:700;padding:1px 12px;border-radius:999px;line-height:1.7}
+.tag.ins{background:var(--ins-bg);color:var(--ins)}
+.tag.own{background:var(--own-bg);color:var(--own)}
 .ask{display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-top:28px}
-.bubble{position:relative;background:#fff;border:2px solid var(--orange);border-radius:28px;padding:14px 18px;font-family:var(--kiwi);font-size:16px;line-height:1.7;white-space:nowrap}
-.bubble::after{content:"";position:absolute;right:-11px;bottom:26px;width:18px;height:18px;background:#fff;border-right:2px solid var(--orange);border-bottom:2px solid var(--orange);transform:rotate(-45deg)}
-.ask img{width:110px;flex:none}
+.bubble{position:relative;background:#fff;border:2px solid var(--accent);border-radius:28px;padding:14px 18px;font-family:var(--kiwi);font-size:16px;line-height:1.7}
+.bubble::after{content:"";position:absolute;right:-11px;bottom:26px;width:18px;height:18px;background:#fff;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.bubble a{color:var(--act);font-weight:700}
+.ask img{width:104px;flex:none}
 
 /* 3つの事実 */
-.facts{list-style:none;display:grid;gap:12px;margin-top:40px;background:var(--beige2);border-radius:28px;padding:18px}
+.facts{list-style:none;display:grid;gap:12px;margin-top:36px;background:var(--beige2);border-radius:28px;padding:18px}
 .facts li{display:flex;align-items:center;gap:14px}
-.facts img{width:64px;height:64px;flex:none;background:#fff;border-radius:50%;padding:8px}
+.facts img{width:60px;height:60px;flex:none;background:#fff;border-radius:50%;padding:8px}
 .facts b{display:block;font-size:17px;line-height:1.5}
 .facts span{font-size:15px;color:var(--mute);line-height:1.5}
 
-/* 3枚のカード */
-.trio{padding:0 0 64px;background:var(--card)}
-.trio .wrap{display:grid;gap:14px}
-.card{background:var(--bg);border-radius:28px;padding:22px}
-.first{display:flex;align-items:center;gap:16px;text-decoration:none}
-.leaf{width:40px;height:52px;flex:none;position:relative}
-.leaf::before,.leaf::after{content:"";position:absolute;top:0;width:50%;height:100%}
-.leaf::before{left:0;background:#F2D33A;clip-path:polygon(0 0,100% 18%,100% 100%,0 82%)}
-.leaf::after{right:0;background:#3FA34D;clip-path:polygon(0 18%,100% 0,100% 82%,0 100%)}
-.first h3{font-family:var(--kiwi);font-weight:500;font-size:23px;display:flex;align-items:center;gap:10px}
-.first h3 i{width:28px;height:28px;border-radius:50%;background:var(--orange);display:inline-grid;place-items:center;color:#fff;font-style:normal;font-size:18px;line-height:1}
-.first p{font-size:15px;color:var(--mute);line-height:1.6;margin-top:4px}
-.front{border-radius:28px;overflow:hidden;aspect-ratio:16/10}
-.front img{width:100%;height:100%;object-fit:cover}
-.info dl{display:grid;gap:12px}
-.info div{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start}
-.info div+div{border-top:1.5px dashed var(--line);padding-top:12px}
-.info dt{font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap}
-.info dt svg{width:20px;height:20px}
-.info dd{font-size:16px;line-height:1.6}
+/* 料金 */
+.price{display:grid;gap:18px;margin-top:28px}
+.pbox{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:22px 20px}
+.alt .pbox{background:var(--bg);border-color:transparent}
+.pbox h3{font-family:var(--kiwi);font-weight:500;font-size:21px;line-height:1.5;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pbox .tag{margin:0}
+.pbox>p{margin-top:10px}
+.plist{list-style:none;margin-top:12px}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1.5px dashed var(--line)}
+.plist li span:last-child{font-weight:700;white-space:nowrap;font-size:18px}
+.pnote{margin-top:12px;display:grid;gap:4px}
+.promise{margin-top:18px;display:grid;gap:10px}
+.promise p{background:var(--cream);border-radius:16px;padding:14px 18px}
+.promise b{display:block}
 
 /* 受付時間 */
+#hours .wrap{max-width:760px}
 .hours{width:100%;border-collapse:separate;border-spacing:0;margin-top:28px;background:var(--card);border-radius:20px;overflow:hidden;border:1.5px solid var(--line)}
 .hours th,.hours td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1.5px solid var(--line)}
 .hours tr:last-child th,.hours tr:last-child td{border-bottom:0}
 .hours th{white-space:nowrap;width:40%;font-weight:700}
 .hours tr.off td{color:var(--mute)}
-.notes{margin-top:18px;display:grid;gap:6px}
-#hours .wrap{max-width:760px}
-
-/* 料金 */
-.price{display:grid;gap:18px;margin-top:28px}
-.pbox{background:var(--bg);border-radius:24px;padding:22px 20px}
-.pbox h3{font-family:var(--kiwi);font-weight:500;font-size:21px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.pbox .tag{margin:0}
-.pbox>p{margin-top:10px}
-.plist{list-style:none;margin-top:12px}
-.plist li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1.5px dashed var(--line)}
-.plist li span:last-child{font-weight:700;white-space:nowrap}
+.notes{margin-top:18px;display:grid;gap:8px}
 
 /* 初めての方へ */
-.qa{display:grid;gap:12px;margin-top:28px}
+.flow{list-style:none;display:grid;gap:10px;margin-top:24px;counter-reset:f}
+.flow li{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:24px;padding:12px 20px 12px 12px;counter-increment:f;line-height:1.6}
+.alt .flow li{background:var(--bg)}
+.flow li::before{content:counter(f);flex:none;width:36px;height:36px;border-radius:50%;background:var(--act);color:#fff;font-weight:700;display:grid;place-items:center}
+.flow small{display:block;font-size:14px;color:var(--mute)}
+.qa{display:grid;gap:12px;margin-top:24px}
 .qa div{background:var(--card);border-radius:20px;padding:18px 20px}
-.qa dt{font-weight:700;display:flex;gap:10px;align-items:baseline}
-.qa dt::before{content:"Q";font-family:var(--kiwi);color:var(--orange);font-size:20px}
+.alt .qa div{background:var(--bg)}
+.qa dt{font-weight:700;display:flex;gap:10px;align-items:baseline;line-height:1.6}
+.qa dt::before{content:"Q";font-family:var(--kiwi);color:var(--act);font-size:20px}
 .qa dd{margin-top:6px;padding-left:24px}
-.flow{list-style:none;display:grid;gap:10px;margin-top:20px;counter-reset:f}
-.flow li{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:999px;padding:10px 20px 10px 10px;counter-increment:f;line-height:1.6}
-.flow li::before{content:counter(f);flex:none;width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;display:grid;place-items:center}
-.bring{margin-top:16px;background:#FDF0E2;border-radius:20px;padding:16px 20px}
-.sub{font-family:var(--kiwi);font-weight:500;font-size:22px;margin-top:44px;text-align:center}
+.bring{margin-top:18px;background:var(--cream);border-radius:20px;padding:16px 20px}
 
 /* 院長 */
 .greet{display:grid;gap:22px;margin-top:28px;align-items:center}
@@ -157,81 +175,98 @@ nav a:hover{color:var(--orange)}
 .photos figcaption{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.6;text-align:center}
 
 /* アクセス */
-.access{display:grid;gap:22px;margin-top:28px}
-.access img{border-radius:28px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.access{display:grid;gap:18px;margin-top:28px}
+.access .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.access figure{margin:0}
+.access img{border-radius:20px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.access figcaption{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
 .access dl{background:var(--bg);border-radius:28px;padding:20px 22px;display:grid;gap:12px}
 .access dl div+div{border-top:1.5px dashed var(--line);padding-top:12px}
-.access dt{font-weight:700;color:var(--orange2);font-size:15px}
+.access dt{font-weight:700;color:var(--act);font-size:15px}
 .route{list-style:none}
+.route li{padding-left:1em;text-indent:-1em}
 .route li::before{content:"・"}
+.maplink{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;color:var(--act);font-weight:700}
 
 /* 電話 */
 .call{text-align:center}
 .callbox{background:var(--card);border-radius:32px;padding:30px 20px 28px;max-width:640px;margin:0 auto}
-.callbox img{width:96px;margin:0 auto 4px}
-.callbox .num{font-family:var(--kiwi);font-size:clamp(32px,8vw,42px);text-decoration:none;color:var(--orange);display:inline-flex;align-items:center;gap:10px;letter-spacing:.03em;margin-top:8px}
+.callbox img{width:92px;margin:0 auto 4px}
+.callbox .num{font-family:var(--kiwi);font-size:clamp(32px,8vw,42px);text-decoration:none;color:var(--act);display:inline-flex;align-items:center;gap:10px;min-height:56px;letter-spacing:.03em;margin-top:8px}
 .callbox .num svg{width:30px;height:30px}
 .callbox p{margin-top:6px}
 
-footer{padding:36px 0 30px;font-size:14px;color:var(--mute);line-height:1.8;background:var(--card)}
+footer{padding:36px 0 30px;font-size:15px;color:var(--mute);line-height:1.8;background:var(--card)}
 footer .name{font-family:var(--kiwi);font-size:19px;color:var(--brown)}
 footer .note{margin-top:14px;padding-top:12px;border-top:1.5px dashed var(--line)}
-footer a{color:var(--orange2)}
+footer a{color:var(--act);display:inline-flex;align-items:center;min-height:44px}
 
-/* 下に固定 */
-.fixed{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,253,249,.97);border-top:1.5px solid var(--line)}
+/* 下に固定(電話。#68) */
+.fixed{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,253,249,.97);border-top:1.5px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 .fixed .wrap{display:flex;align-items:center;gap:12px;padding:10px 0}
 .fixed p{flex:1;min-width:0;font-size:13px;line-height:1.5;color:var(--mute)}
 .fixed p b{display:block;color:var(--brown);font-size:15px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 22px;border-radius:999px;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:17px;flex:none;box-shadow:0 3px 0 var(--orange2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:var(--act);color:#fff;text-decoration:none;font-weight:700;font-size:17px;flex:none;box-shadow:0 3px 0 var(--act-dark)}
 .btn svg{width:20px;height:20px}
 
-/* フェード */
-.js .fade{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
-.js .fade.in{opacity:1;transform:none}
-.static .fade{opacity:1!important;transform:none!important;transition:none!important}
-@media (prefers-reduced-motion:reduce){.js .fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* フェード: JS が動いていて、動きを減らす設定がオフのときだけ隠す(#190) */
+@media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+  .js:not(.static) .fade{opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.2,0,0,1),transform .5s cubic-bezier(.2,0,0,1)}
+  .js:not(.static) .fade.in{opacity:1;transform:none}
+}
 
+@media (max-width:359px){
+  header .wrap{gap:8px}
+  .logo img{width:34px;height:34px}
+  .logo b{font-size:16px}
+  .hcall{padding:0 12px;font-size:14px}
+}
 @media (min-width:600px){
+  .jump ul{grid-template-columns:repeat(4,1fr)}
   .pain-list{grid-template-columns:repeat(3,1fr)}
   .pain-list li:last-child{grid-column:auto}
   .logo b{font-size:21px}
   .logo img{width:50px;height:50px}
+  .town{display:block}
 }
 @media (min-width:960px){
-  section{padding:88px 0}
-  header .wrap{height:88px}
-  nav{display:flex}
-  .hcall{margin-left:20px;padding:12px 22px;font-size:16px}
-  .hinfo{display:block;font-size:12px;line-height:1.5;color:var(--mute);text-align:right;padding-left:20px;border-left:1.5px solid var(--line)}
+  :root{--head:88px}
+  section{padding:84px 0}
+  .gnav{display:flex}
+  .hcall{margin-left:12px;padding:0 22px;font-size:16px;min-height:48px}
+  .hinfo{display:block;font-size:12px;line-height:1.5;color:var(--mute);text-align:right;padding-left:16px;border-left:1.5px solid var(--line)}
   .hinfo b{display:block;font-size:20px;color:var(--brown);letter-spacing:.03em}
   .hero-grid{grid-template-columns:1fr 1.05fr;align-items:center;gap:24px}
-  .hero-photo{aspect-ratio:auto;height:560px;border-radius:220px 0 0 40px;margin-right:calc((100vw - min(1120px,100vw - 32px)) / -2)}
-  .hero-copy{padding:40px 0 0}
-  .town{margin-top:28px}
-  .wave{height:80px;margin-top:-60px}
+  .hero-photo{aspect-ratio:auto;height:540px;border-radius:220px 0 0 40px;margin-right:calc((100vw - min(1120px,100vw - 32px)) / -2)}
+  .hero-copy{padding:32px 0 0}
+  .wave{height:70px;margin-top:-50px}
+  .jump{display:none}
+  .news{padding-top:0}
+  .news .box{max-width:760px;margin-inline:auto}
   .pains .inner{display:grid;grid-template-columns:1fr 250px;gap:20px;align-items:center}
   .pain-list{grid-template-columns:repeat(5,1fr)}
-  .pain-list .circle{max-width:160px}
-  .ask img{width:150px}
+  .pain-list .circle{max-width:156px}
+  .ask img{width:140px}
   .ask{flex-direction:column;align-items:center;margin-top:0}
   .bubble::after{right:auto;left:50%;bottom:-11px;transform:translateX(-50%) rotate(45deg)}
   .facts{grid-template-columns:repeat(3,1fr);padding:22px 30px}
   .facts li+li{border-left:1.5px solid var(--line);padding-left:20px}
-  .trio .wrap{grid-template-columns:1.15fr .9fr 1.1fr;gap:16px;align-items:stretch}
-  .front{aspect-ratio:auto;min-height:200px}
   .price{grid-template-columns:1fr 1fr}
+  .promise{grid-template-columns:1fr 1fr}
   .qa{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:repeat(4,1fr)}
-  .flow li{border-radius:24px;flex-direction:column;text-align:center;padding:18px 14px}
-  .greet,.access{grid-template-columns:1fr 1fr}
+  .flow li{flex-direction:column;text-align:center;padding:18px 14px}
+  .greet{grid-template-columns:1fr 1fr}
+  .access{grid-template-columns:1.1fr 1fr;align-items:start}
   .photos{grid-template-columns:repeat(4,1fr)}
   .fixed .wrap{justify-content:flex-end}
   .fixed p{flex:none;text-align:right}
 }
 </style>
 <script>
-(function(){var d=document.documentElement;d.classList.add(/[?&]static=1/.test(location.search)?'static':'js');})();
+(function(){var d=document.documentElement;d.classList.add(/[?&]static=1/.test(location.search)?'static':'js');
+window.addEventListener('error',function(){d.classList.add('static')});})();
 </script>
 </head>
 <body>
@@ -239,7 +274,7 @@ footer a{color:var(--orange2)}
 <header>
   <div class="wrap">
     <a class="logo" href="#top"><img src="img/il_frog.webp" alt="" width="50" height="50"><span><small>〇〇町</small><b>やなぎ通り接骨院</b></span></a>
-    <nav aria-label="ページ内"><a href="#first">初めての方へ</a><a href="#price">料金</a><a href="#hours">受付時間</a><a href="#access">アクセス</a></nav>
+    <nav class="gnav" aria-label="ページ内"><a href="#price">料金</a><a href="#hours">受付時間</a><a href="#first">初めての方へ</a><a href="#access">場所・駐車場</a></nav>
     <div class="hinfo"><b>000-0000-0000</b>受付 9:00〜12:00 / 15:00〜20:00<br>(木・土は午後休み、日・祝休み)</div>
     <a class="hcall" href="tel:000-0000-0000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>電話する</a>
   </div>
@@ -250,9 +285,14 @@ footer a{color:var(--orange2)}
 <div class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy fade">
+      <p class="kind">〇〇町・やなぎ通りの接骨院</p>
       <h1>けがのことも、<br>肩や腰のことも、<br><span class="em">気軽に</span>相談を。</h1>
-      <p class="lead">やなぎ通り沿いの接骨院です。捻挫や打撲などのけがは保険で、肩・首・腰のつらさは自費で施術しています。</p>
-      <p class="open"><i aria-hidden="true"></i>予約なしでも受け付けています</p>
+      <p class="lead read">捻挫や打撲などのけがは健康保険で、肩・首・腰のつらさは自費(20分3,300円から)で施術しています。</p>
+      <ul class="badges">
+        <li><i aria-hidden="true"></i>予約なしでも受付</li>
+        <li><i aria-hidden="true"></i>駐車場6台</li>
+        <li><i aria-hidden="true"></i>平日は20時まで</li>
+      </ul>
       <img class="town" src="img/il_town.webp" alt="" width="1200" height="437">
     </div>
     <div class="hero-photo"><img src="img/hero.jpg" alt="院長が患者さんの肩に手をあてて話を聞いているところ" width="1600" height="1195" fetchpriority="high"></div>
@@ -260,45 +300,86 @@ footer a{color:var(--orange2)}
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C240 10 420 70 720 40 S1200 0 1440 36 V80 H0Z" fill="#FFFDF9"/></svg>
 </div>
 
+<nav class="jump" aria-label="このページの内容">
+  <div class="wrap">
+    <ul>
+      <li><a href="#price">料金</a></li>
+      <li><a href="#hours">受付時間</a></li>
+      <li><a href="#first">初めての方へ</a></li>
+      <li><a href="#access">場所・駐車場</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="news">
+  <div class="wrap">
+    <p class="box"><b>お知らせ</b><span>11月23日(月・祝)と、12月29日(火)〜1月3日(日)はお休みです。<time datetime="2026-11-12">2026年11月12日 更新</time></span></p>
+  </div>
+</div>
+
 <section class="pains" aria-labelledby="pains-h">
   <div class="wrap">
     <h2 class="slash fade" id="pains-h">こんなときに来てください</h2>
     <div class="inner">
       <ul class="pain-list">
-        <li class="fade"><div class="circle"><img src="img/il_kata.webp" alt="" width="300" height="283" loading="lazy"></div><b>肩こり<br>首の痛み</b><span class="tag own">自費</span></li>
-        <li class="fade"><div class="circle"><img src="img/il_koshi.webp" alt="" width="296" height="300" loading="lazy"></div><b>腰の<br>重さ・痛み</b><span class="tag own">自費</span></li>
-        <li class="fade"><div class="circle"><img src="img/il_bukatsu.webp" alt="" width="297" height="300" loading="lazy"></div><b>部活や<br>運動のけが</b><span class="tag ins">保険</span></li>
-        <li class="fade"><div class="circle"><img src="img/il_nenza.webp" alt="" width="300" height="296" loading="lazy"></div><b>捻挫・<br>打撲</b><span class="tag ins">保険</span></li>
+        <li class="fade"><div class="circle"><img src="img/il_bukatsu.webp" alt="" width="297" height="300" loading="lazy"></div><b>部活や<br>運動のけが</b><span class="tag ins">健康保険</span></li>
+        <li class="fade"><div class="circle"><img src="img/il_nenza.webp" alt="" width="300" height="296" loading="lazy"></div><b>捻挫・<br>打撲</b><span class="tag ins">健康保険</span></li>
+        <li class="fade"><div class="circle"><img src="img/il_kata.webp" alt="" width="300" height="283" loading="lazy"></div><b>肩こり<br>首のつらさ</b><span class="tag own">自費</span></li>
+        <li class="fade"><div class="circle"><img src="img/il_koshi.webp" alt="" width="296" height="300" loading="lazy"></div><b>腰の<br>重さ</b><span class="tag own">自費</span></li>
         <li class="fade"><div class="circle"><img src="img/il_kaji.webp" alt="" width="300" height="291" loading="lazy"></div><b>家事や<br>立ち仕事の疲れ</b><span class="tag own">自費</span></li>
       </ul>
       <div class="ask fade">
-        <p class="bubble">保険が使えるか<br>分からないときは、<br>電話で聞いてください。</p>
+        <p class="bubble">健康保険が使えるか<br>分からないときは、<br><a href="tel:000-0000-0000">電話で聞いてください</a>。</p>
         <img src="img/il_frog_point.webp" alt="" width="360" height="360" loading="lazy">
       </div>
     </div>
 
     <ul class="facts fade">
       <li><img src="img/ic_door.webp" alt="" width="196" height="200" loading="lazy"><p><b>予約なしでも受付</b><span>電話で予約した方が先になります</span></p></li>
-      <li><img src="img/ic_car.webp" alt="" width="196" height="200" loading="lazy"><p><b>駐車場 6 台</b><span>院の前に停められます</span></p></li>
-      <li><img src="img/ic_shirt.webp" alt="" width="200" height="196" loading="lazy"><p><b>着替えの貸し出し</b><span>短パンと T シャツがあります</span></p></li>
+      <li><img src="img/ic_car.webp" alt="" width="196" height="200" loading="lazy"><p><b>駐車場6台</b><span>院の前に停められます</span></p></li>
+      <li><img src="img/ic_shirt.webp" alt="" width="200" height="196" loading="lazy"><p><b>着替えの貸し出し</b><span>短パンとTシャツがあります</span></p></li>
     </ul>
   </div>
 </section>
 
-<div class="trio">
+<section id="price">
   <div class="wrap">
-    <a class="card first fade" href="#first"><span class="leaf" aria-hidden="true"></span><span><h3>初めての方へ<i aria-hidden="true">›</i></h3><p>保険のこと、服装、来てからの流れをまとめました。</p></span></a>
-    <div class="front fade"><img src="img/1_gaikan.jpg" alt="やなぎ通り接骨院の外観。白い建物と木の引き戸、前に駐車場" width="1600" height="1194" loading="lazy"></div>
-    <div class="card info fade">
-      <dl>
-        <div><dt><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>場所</dt><dd>やなぎ通り沿い<br>〇〇小学校から 200m</dd></div>
-        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>受付時間</dt><dd>9:00〜12:00 / 15:00〜20:00<br>木・土は午後休み<br>日・祝はお休み</dd></div>
-      </dl>
+    <h2 class="ttl fade">料金<small>税込・目安です。お支払いは現金とQRコード決済</small></h2>
+    <div class="price">
+      <div class="pbox fade">
+        <h3><span class="tag ins">健康保険</span>けがの施術</h3>
+        <p>骨折・脱臼・打撲・捻挫・挫傷(肉離れ)など、いつ・どこで・どうしたかがはっきりしているけがは、健康保険を使って一部の負担で施術を受けられます。</p>
+        <ul class="plist">
+          <li><span>初回</span><span>1,500円前後</span></li>
+          <li><span>2回目から</span><span>500〜800円前後</span></li>
+        </ul>
+        <div class="pnote small">
+          <p>3割負担のときの目安です。負担の割合や、けがをした場所の数で変わります。</p>
+          <p>骨折・脱臼は、応急の手当てのあとは医師の同意が必要です。</p>
+        </div>
+      </div>
+      <div class="pbox fade">
+        <h3><span class="tag own">自費</span>肩・首・腰のつらさ</h3>
+        <p>長く続く肩こりや腰の重さ、疲れは健康保険の対象外のため、自費になります。</p>
+        <ul class="plist">
+          <li><span>肩・首の手技 20分</span><span>3,300円</span></li>
+          <li><span>姿勢と骨盤の調整 30分</span><span>4,400円</span></li>
+          <li><span>初回のみ 問診・検査料</span><span>1,100円</span></li>
+        </ul>
+        <div class="pnote small">
+          <p>初めての方は、20分の施術で4,400円(問診・検査料を含む)です。</p>
+          <p>施術のあと、体がだるくなったり、軽い痛みが出たりすることがあります。続くときは電話で知らせてください。</p>
+        </div>
+      </div>
+    </div>
+    <div class="promise fade">
+      <p><b>回数券・まとめ払いはありません。</b>1回ずつのお支払いです。</p>
+      <p><b>通う回数は、初めての日に目安をお伝えします。</b>決めるのはご本人です。</p>
     </div>
   </div>
-</div>
+</section>
 
-<section id="hours">
+<section id="hours" class="alt">
   <div class="wrap fade">
     <h2 class="ttl">受付時間</h2>
     <table class="hours">
@@ -307,36 +388,8 @@ footer a{color:var(--orange2)}
       <tr class="off"><th scope="row">日・祝</th><td>お休み</td></tr>
     </table>
     <div class="notes">
-      <p>夕方 17 時からは部活帰りの学生さんで混みます。待ちたくない方は、電話で時間を決めてから来てください。</p>
+      <p>夕方17時からは部活帰りの学生さんで混みます。待ちたくない方は、電話で時間を決めてから来てください。</p>
       <p class="small">施術中は電話に出られないことがあります。少し時間をおいて、もう一度かけてください。</p>
-      <p class="small">お知らせ: 11月23日(月・祝)と、12月29日(火)〜1月3日(日)はお休みです。</p>
-    </div>
-  </div>
-</section>
-
-<section id="price" style="background:var(--card)">
-  <div class="wrap">
-    <h2 class="ttl fade">料金<small>税込・目安です</small></h2>
-    <div class="price">
-      <div class="pbox fade">
-        <h3><span class="tag ins">保険</span>けがの施術</h3>
-        <p>骨折・脱臼・打撲・捻挫・挫傷(肉離れ)など、いつ・どこで・どうしたかがはっきりしているけがは保険が使えます。</p>
-        <ul class="plist">
-          <li><span>初回</span><span>1,500 円前後</span></li>
-          <li><span>2 回目から</span><span>500〜800 円前後</span></li>
-        </ul>
-        <p class="small" style="margin-top:10px">3 割負担のときの目安です。負担の割合や、けがをした場所の数で変わります。骨折・脱臼は、応急の手当てのあとは医師の同意が必要です。</p>
-      </div>
-      <div class="pbox fade">
-        <h3><span class="tag own">自費</span>肩・首・腰のつらさ</h3>
-        <p>長く続く肩こりや腰の重さ、疲れは保険が使えないため、自費になります。</p>
-        <ul class="plist">
-          <li><span>肩・首の手技 20 分</span><span>3,300 円</span></li>
-          <li><span>姿勢と骨盤の調整 30 分</span><span>4,400 円</span></li>
-          <li><span>初回のみ 問診・検査料</span><span>1,100 円</span></li>
-        </ul>
-        <p class="small" style="margin-top:10px">お支払いは現金と QR コード決済です。</p>
-      </div>
     </div>
   </div>
 </section>
@@ -344,34 +397,37 @@ footer a{color:var(--orange2)}
 <section id="first">
   <div class="wrap">
     <h2 class="ttl fade">初めての方へ<small>電話でよく聞かれることを、先にまとめました</small></h2>
-    <dl class="qa">
-      <div class="fade"><dt>保険は使えますか</dt><dd>けがなら使えます。慢性の肩こりや疲れは保険の対象外で、自費になります。どちらか分からないときは、電話で聞いてください。</dd></div>
-      <div class="fade"><dt>予約しないと行けませんか</dt><dd>予約なしでも大丈夫です。夕方 17 時からは混むので、待ちたくない方は電話で予約をしてください。</dd></div>
-      <div class="fade"><dt>何を着ていけばいいですか</dt><dd>動きやすい服で来てください。短パンと T シャツの貸し出しもあります。</dd></div>
-      <div class="fade"><dt>駐車場はありますか</dt><dd>院の前に 6 台あります。満車のときは受付に声をかけてください。</dd></div>
-      <div class="fade"><dt>何回通えばいいですか</dt><dd>けがの具合で変わります。初めての日に、通う回数と間隔の目安をお伝えします。</dd></div>
-    </dl>
 
-    <h3 class="sub fade">来てからの流れ</h3>
+    <h3 class="sub fade" style="margin-top:28px">来てからの流れ</h3>
     <ol class="flow fade">
-      <li>受付で問診票を書きます(5 分ほど)</li>
-      <li>痛むところと、どう動かすと痛いかを確かめます</li>
-      <li>施術します</li>
-      <li>次に来る目安を一緒に決めます</li>
+      <li><span>受付で問診票を書きます<small>5分ほど</small></span></li>
+      <li><span>痛むところと、どう動かすと痛いかを確かめます</span></li>
+      <li><span>施術します<small>痛いときは、すぐ言ってください</small></span></li>
+      <li><span>次に来る目安を一緒に決めます</span></li>
     </ol>
-    <p class="bring fade"><b>持ってくるもの:</b>保険を使う方は、マイナ保険証か資格確認書。お薬手帳があれば一緒にお持ちください。</p>
+
+    <h3 class="sub fade">よく聞かれること</h3>
+    <dl class="qa">
+      <div class="fade"><dt>健康保険は使えますか</dt><dd>けがなら使えます。慢性の肩こりや疲れは対象外で、自費になります。どちらか分からないときは、電話で聞いてください。</dd></div>
+      <div class="fade"><dt>予約しないと行けませんか</dt><dd>予約なしでも大丈夫です。夕方17時からは混むので、待ちたくない方は電話で予約をしてください。</dd></div>
+      <div class="fade"><dt>何を着ていけばいいですか</dt><dd>動きやすい服で来てください。短パンとTシャツの貸し出しもあります。</dd></div>
+      <div class="fade"><dt>駐車場はありますか</dt><dd>院の前に6台あります。満車のときは受付に声をかけてください。</dd></div>
+      <div class="fade"><dt>何回通えばいいですか</dt><dd>けがの具合で変わります。初めての日に、通う回数と間隔の目安をお伝えします。</dd></div>
+      <div class="fade"><dt>施術は痛くないですか</dt><dd>痛むところに合わせて力を加減します。痛いときは、がまんせずに言ってください。</dd></div>
+    </dl>
+    <p class="bring fade"><b>持ってくるもの:</b>健康保険を使う方は、マイナ保険証か資格確認書。お薬手帳があれば一緒に持ってきてください。</p>
   </div>
 </section>
 
-<section id="greet" style="background:var(--card)">
+<section id="greet" class="alt">
   <div class="wrap">
     <h2 class="ttl fade">院長から</h2>
     <div class="greet">
       <img class="fade" src="img/4_kata.jpg" alt="タオルの上から肩に手をあてて施術しているところ" width="1600" height="1194" loading="lazy">
       <div class="msg fade">
-        <p>〇〇町で 12 年やっています。</p>
+        <p>〇〇町で12年やっています。</p>
         <p>痛いところは人それぞれなので、最初によく話を聞くようにしています。分からないことは何でも聞いてください。</p>
-        <p class="sign">院長(柔道整復師)</p>
+        <p class="sign">院長 柔道整復師(国家資格)</p>
       </div>
     </div>
   </div>
@@ -382,22 +438,25 @@ footer a{color:var(--orange2)}
     <h2 class="ttl fade">院の中</h2>
     <div class="photos">
       <figure class="fade"><img src="img/3_genkan.jpg" alt="玄関と受付。スリッパが並び、横に長いすがある" width="1600" height="1194" loading="lazy"><figcaption>玄関と受付。靴を脱いで上がります</figcaption></figure>
-      <figure class="fade"><img src="img/2_sejutsu.jpg" alt="施術用のベッドが4台並ぶ部屋" width="1600" height="1194" loading="lazy"><figcaption>ベッドは 4 台。カーテンで仕切れます</figcaption></figure>
+      <figure class="fade"><img src="img/2_sejutsu.jpg" alt="施術用のベッドが4台並ぶ部屋" width="1600" height="1194" loading="lazy"><figcaption>ベッドは4台。カーテンで仕切れます</figcaption></figure>
       <figure class="fade"><img src="img/5_ashi.jpg" alt="足首にテーピングをしているところ" width="1158" height="1194" loading="lazy"><figcaption>部活のけがも見ています</figcaption></figure>
       <figure class="fade"><img src="img/6_kigae.jpg" alt="棚にたたんだTシャツと短パン、横に着替え用のカーテン" width="1600" height="1194" loading="lazy"><figcaption>着替えの貸し出しと、着替える場所</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section id="access" style="background:var(--card)">
+<section id="access" class="alt">
   <div class="wrap">
     <h2 class="ttl fade">場所と駐車場</h2>
     <div class="access">
-      <img class="fade" src="img/7_michi.jpg" alt="柳の並木がある住宅街の道。右手に白い建物と駐車場" width="1600" height="1194" loading="lazy">
+      <div class="pics fade">
+        <figure><img src="img/1_gaikan.jpg" alt="やなぎ通り接骨院の外観。白い建物と木の引き戸、前に駐車場" width="1600" height="1194" loading="lazy"><figcaption>白い建物が目印です</figcaption></figure>
+        <figure><img src="img/7_michi.jpg" alt="柳の並木がある住宅街の道。右手に白い建物と駐車場" width="1600" height="1194" loading="lazy"><figcaption>やなぎ通りの並木道</figcaption></figure>
+      </div>
       <dl class="fade">
         <div><dt>住所</dt><dd>〇〇市〇〇町1-2-3(やなぎ通り沿い)</dd></div>
-        <div><dt>道順</dt><dd><ul class="route"><li>〇〇小学校の前の信号を、やなぎ通りへ入ります</li><li>柳の並木を 200m ほど進んだ右手、白い建物です</li></ul></dd></div>
-        <div><dt>駐車場</dt><dd>院の前に 6 台。満車のときは受付に声をかけてください</dd></div>
+        <div><dt>道順</dt><dd><ul class="route"><li>〇〇小学校の前の信号を、やなぎ通りへ入ります</li><li>柳の並木を200mほど進んだ右手、白い建物です</li></ul></dd></div>
+        <div><dt>駐車場</dt><dd>院の前に6台。満車のときは受付に声をかけてください</dd></div>
         <div><dt>自転車</dt><dd>入口の横に止められます</dd></div>
       </dl>
     </div>
@@ -410,7 +469,7 @@ footer a{color:var(--orange2)}
       <img src="img/il_frog.webp" alt="" width="358" height="360" loading="lazy">
       <h2 class="ttl">予約・問い合わせは<br>電話で</h2>
       <a class="num" href="tel:000-0000-0000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>000-0000-0000</a>
-      <p>受付時間内にかけてください。</p>
+      <p>受付 9:00〜12:00 / 15:00〜20:00(木・土は13:00まで、日・祝休み)</p>
       <p class="small">施術中で出られないときは、少し時間をおいてもう一度お願いします。</p>
     </div>
   </div>
@@ -426,7 +485,7 @@ footer a{color:var(--orange2)}
     <div class="note">
       <p>※このサイトは架空のお店の制作例です。制作: ノレン</p>
       <p>Photos・Illustrations: AI 生成(Higgsfield)</p>
-      <p style="margin-top:8px"><a href="../../">← ノレンの制作例一覧へ</a></p>
+      <p><a href="../../">← ノレンの制作例一覧へ</a></p>
     </div>
   </div>
 </footer>
@@ -440,11 +499,14 @@ footer a{color:var(--orange2)}
 
 <script>
 (function(){
-  if(!document.documentElement.classList.contains('js'))return;
-  var els=document.querySelectorAll('.fade');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e)});
+  var d=document.documentElement;
+  if(!d.classList.contains('js')||d.classList.contains('static'))return;
+  try{
+    var els=document.querySelectorAll('.fade');
+    if(!('IntersectionObserver' in window)){d.classList.add('static');return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }catch(err){d.classList.add('static');}
 })();
 </script>
 </body>
